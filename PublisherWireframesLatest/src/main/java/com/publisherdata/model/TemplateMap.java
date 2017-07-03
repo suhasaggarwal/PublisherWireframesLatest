@@ -1,11 +1,32 @@
 package com.publisherdata.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
-@JsonInclude(JsonInclude.Include.NON_NULL.NON_EMPTY)
 public class TemplateMap {
 
+	private String Id;
+	
+	public String getId() {
+		return Id;
+	}
 
+	public void setId(String id) {
+		Id = id;
+	}
+
+	public String getSiteId() {
+		return siteId;
+	}
+
+	public void setSiteId(String siteId) {
+		this.siteId = siteId;
+	}
+
+	public String getCardTitle() {
+		return cardTitle;
+	}
+
+	public void setCardTitle(String cardTitle) {
+		this.cardTitle = cardTitle;
+	}
 
 	public String getEndpoint() {
 		return endpoint;
@@ -15,18 +36,10 @@ public class TemplateMap {
 		this.endpoint = endpoint;
 	}
 
+	private String siteId;
 	
-	private String display;
+	private String cardTitle;
 	
-	
-	public String getDisplay() {
-		return display;
-	}
-
-	public void setDisplay(String display) {
-		this.display = display;
-	}
-
 	private String endpoint;
 	
 	

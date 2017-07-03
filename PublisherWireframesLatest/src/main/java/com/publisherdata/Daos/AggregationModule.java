@@ -75,7 +75,7 @@ public class AggregationModule
   
   static {
       Map<String, String> countryMap1 = new HashMap<String,String>();
-      String csvFile = "/root/countrycodes.csv";
+      String csvFile = "C://countrycodes.csv";
       BufferedReader br = null;
       String line = "";
       String cvsSplitBy = ",";
@@ -129,7 +129,7 @@ catch(Exception e){
   
   static {
       Map<String, List<String>> countrystateMap1 = new HashMap<String,List<String>>();
-      String csvFile1 = "/root/statecodes.csv";
+      String csvFile1 = "C://statecodes.csv";
       BufferedReader br1 = null;
       String line1 = "";
       String cvsSplitBy1 = ",";
@@ -193,7 +193,7 @@ catch(Exception e){
    
   static {
       Map<String, String> cityMap = new HashMap<String,String>();
-      String csvFile2 = "/root/citycode1.csv";
+      String csvFile2 = "C://citycode1.csv";
       BufferedReader br2 = null;
       String line2 = "";
       String cvsSplitBy2 = ",";
@@ -264,7 +264,7 @@ catch(Exception e){
   public static Map<String,String> oscodeMap;
   static {
       Map<String, String> osMap = new HashMap<String,String>();
-      String csvFile = "/root/oscode2.csv";
+      String csvFile = "C://oscode2.csv";
       BufferedReader br = null;
       String line = "";
       String cvsSplitBy = ",";
@@ -315,7 +315,7 @@ catch(Exception e){
   public static Map<String,String> oscodeMap1;
   static {
       Map<String, String> osMap2 = new HashMap<String,String>();
-      String csvFile = "/root/system_os.csv";
+      String csvFile = "C://system_os.csv";
       BufferedReader br = null;
       String line = "";
       String cvsSplitBy = ",";
@@ -369,7 +369,7 @@ catch(Exception e){
   public static Map<String,String> devicecodeMap;
   static {
       Map<String, String> deviceMap = new HashMap<String,String>();
-      String csvFile = "/root/devicecode2.csv";
+      String csvFile = "C://devicecode2.csv";
       BufferedReader br = null;
       String line = "";
       String cvsSplitBy = ",";
@@ -424,7 +424,7 @@ catch(Exception e){
   
   static {
       Map<String, String> audienceMap = new HashMap<String,String>();
-      String csvFile = "/root/subcategorymap1.csv";
+      String csvFile = "C://subcategorymap1.csv";
       BufferedReader br = null;
       String line = "";
       String cvsSplitBy = ",";
@@ -482,7 +482,7 @@ public static Map<String,String> AuthorMap1;
   
   static {
       Map<String, String> authorMap = new HashMap<String,String>();
-      String csvFile5 = "/root/authorMap.csv";
+      String csvFile5 = "C://authorMap.csv";
       BufferedReader br5 = null;
       String line5 = "";
       String cvsSplitBy5 = ",";
@@ -577,7 +577,7 @@ catch(Exception e){
 	
 	 //setUp();
      AggregationModule mod = new  AggregationModule();
-   //  mod.setUp();
+     mod.setUp();
   //   mod.countBrandNameChannel("2016-01-13","2017-01-31", "Patrika_multiple_June_16");
     // Map<String,String> filter1 = new HashMap<String,String>();
    //  filter1.put("cookie_id","bba865ee_b360_4a58_a95a_74e6ba44e7b4");
@@ -600,7 +600,7 @@ catch(Exception e){
       
       /*
      mod.countOS("2017-01-01","2017-01-31"); */
- //   mod.counttotalvisitorsChannelSectionDateHourlywise("2017-01-19","2017-01-19","Womanseraindia_indiagate","http___womansera_com_entertainment");
+    mod.counttotalvisitorsChannelSectionDateHourlywise("2017-01-19","2017-01-19","Womanseraindia_indiagate","http___womansera_com_entertainment");
   //   mod.counttotalvisitorsChannelSectionDateHourlyMinutewise("2017-01-16 13:00:01","2017-01-16 13:59:59","Womanseraindia_indiagate","http___womansera_com_entertainment");
   //   mod.countCityChannelArticle("2017-01-01","2017-01-31","Womanseraindia_indiagate","shahid");
     /* 
@@ -667,19 +667,19 @@ catch(Exception e){
     */ 
 //     mod.countAudiencesegmentChannelArticle("2017-01-01","2017-01-31","Womanseraindia_indiagate","http://womansera.com/wedding/video-shahid-miras-dance-sajh-dajh-ke-sangeet-ceremony");
     
- //    Map<String,String>filter = new HashMap<String,String>();
- //    filter.put("city","delhi,mumbai");
- //    filter.put("agegroup","35_44");
+     Map<String,String>filter = new HashMap<String,String>();
+     filter.put("city","delhi,mumbai");
+     filter.put("agegroup","35_44");
 //     filter.put("incomelevel", "medium");
   //   filter.put("devicetype","tablet");
     // mod.getGenderChannelFilter("2017-01-01","2017-01-31","Womanseraindia_indiagate", filter);
     
      
-   //  List<String> groupby = new ArrayList<String>();
-   //  groupby.add("subcategory");
+     List<String> groupby = new ArrayList<String>();
+     groupby.add("subcategory");
    
    //  groupby.add("incomelevel");
-   //  mod.getQueryFieldChannelGroupBy("audience_segment","2017-01-01","2017-01-31","Womanseraindia_indiagate", groupby,"pageviews");
+     mod.getQueryFieldChannelGroupBy("audience_segment","2017-01-01","2017-01-31","Womanseraindia_indiagate", groupby,"pageviews");
      /*	 
 	 final long startTime1 = System.currentTimeMillis();
 	 AggregationModule mod = new AggregationModule();
@@ -742,7 +742,7 @@ catch(Exception e){
 	      Double startlimit = current_start;
 	      Double finallimit = current_start + subrange_length;
 	      Double index = startlimit +1;
-	      String query = "SELECT distinct(cookie_id) FROM enhanceduserdatabeta1 where date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit "+index.intValue()+","+finallimit.intValue();  	
+	      String query = "SELECT DISTINCT(cookie_id) FROM enhanceduserdatapatrika where date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit "+index.intValue()+","+finallimit.intValue();  	
 		  System.out.println(query);
 	  //    Query.add(query);
 	      current_start += subrange_length;
@@ -844,8 +844,8 @@ catch(Exception e){
   public List<PublisherReport> countBrandName(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,brandName FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,brandName FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -872,8 +872,8 @@ catch(Exception e){
   public List<PublisherReport> countBrowser(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,browser_name FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,browser_name FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -899,8 +899,8 @@ catch(Exception e){
   public List<PublisherReport> countOS(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,system_os FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,system_os FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -924,8 +924,8 @@ catch(Exception e){
   public List<PublisherReport> countModel(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,modelName FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,modelName FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -950,8 +950,8 @@ catch(Exception e){
   public List<PublisherReport> countCity(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,city FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,city FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -973,8 +973,8 @@ catch(Exception e){
   public List<PublisherReport> countPinCode(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,postalcode FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,postalcode FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -998,8 +998,8 @@ catch(Exception e){
   public List<PublisherReport> countLatLong(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1028,9 +1028,9 @@ catch(Exception e){
   public List<PublisherReport> countfingerprint(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where date between '" + 
-      startdate + "'" + " and " + "'" + enddate + "'" + " group by date", new Object[] {"enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where date between '" + 
+      startdate + "'" + " and " + "'" + enddate + "'" + " group by date", new Object[] {"enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1059,7 +1059,7 @@ catch(Exception e){
 	  
 	  List<PublisherReport> pubreport = new ArrayList(); 
 	  
-	  String querya1 = "Select Count(distinct(cookie_id)) FROM enhanceduserdata where date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";  
+	  String querya1 = "Select Count(DISTINCT(cookie_id)) FROM enhanceduserdata where date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";  
 	  
 	    //Divide count in different limits 
 	
@@ -1121,7 +1121,7 @@ catch(Exception e){
 	      Double index = startlimit +1;
 	      if(countv1 == 1)
 	    	  index=0.0;
-	      String query = "SELECT distinct(cookie_id) FROM enhanceduserdata where date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
+	      String query = "SELECT DISTINCT(cookie_id) FROM enhanceduserdata where date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
 		  System.out.println(query);
 	  //    Query.add(query);
 	      current_start += subrange_length;
@@ -1301,8 +1301,8 @@ catch(Exception e){
   public List<PublisherReport> countISP(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,ISP FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by ISP", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,ISP FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by ISP", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1329,8 +1329,8 @@ catch(Exception e){
   public List<PublisherReport> countOrg(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT organisation FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " and organisation NOT IN (Select DISTINCT(ISP) FROM enhanceduserdatabeta1)", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT organisation FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " and organisation NOT IN (Select DISTINCT(ISP) FROM enhanceduserdatapatrika)", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1355,7 +1355,7 @@ catch(Exception e){
   public Set<String> getChannelList(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    String query = String.format("SELECT channel_name FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " Group by channel_name", new Object[] { "enhanceduserdatabeta1" });
+    String query = String.format("SELECT channel_name FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " Group by channel_name", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1372,7 +1372,7 @@ catch(Exception e){
   public List<PublisherReport> gettimeofdayQuarter(String startdate, String enddate)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*) from enhanceduserdatabeta1 WHERE date between '" + startdate + "'" + " and " + "'" + enddate + "' GROUP BY HOUR(request_time)";
+    String query = "Select count(*) from enhanceduserdatapatrika WHERE date between '" + startdate + "'" + " and " + "'" + enddate + "' GROUP BY HOUR(request_time)";
     
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
@@ -1398,7 +1398,7 @@ catch(Exception e){
   public List<PublisherReport> gettimeofdayDaily(String startdate, String enddate)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*) from enhanceduserdatabeta1 WHERE date between '" + startdate + "'" + " and " + "'" + enddate + "' GROUP BY date_histogram(field='request_time','interval'='1d')";
+    String query = "Select count(*) from enhanceduserdatapatrika WHERE date between '" + startdate + "'" + " and " + "'" + enddate + "' GROUP BY date_histogram(field='request_time','interval'='1d')";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1423,7 +1423,7 @@ catch(Exception e){
   public List<PublisherReport> gettimeofday(String startdate, String enddate)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*) from enhanceduserdatabeta1 WHERE date between '" + startdate + "'" + " and " + "'" + enddate + "' GROUP BY date_histogram(field='request_time','interval'='1h')";
+    String query = "Select count(*) from enhanceduserdatapatrika WHERE date between '" + startdate + "'" + " and " + "'" + enddate + "' GROUP BY date_histogram(field='request_time','interval'='1h')";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1448,8 +1448,8 @@ catch(Exception e){
   public List<PublisherReport> countGender(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,gender FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by gender", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,gender FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by gender", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1477,8 +1477,8 @@ catch(Exception e){
   public List<PublisherReport> countAgegroup(String startdate, String enddate)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,agegroup FROM enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by agegroup", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,agegroup FROM enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " group by agegroup", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1506,7 +1506,7 @@ catch(Exception e){
   public List<PublisherReport> getOrg(String startdate, String enddate)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query1 = "Select count(*),organisation from enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
+    String query1 = "Select count(*),organisation from enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
     CSVResult csvResult1 = getCsvResult(false, query1);
     List<String> headers1 = csvResult1.getHeaders();
     List<String> lines1 = csvResult1.getLines();
@@ -1535,7 +1535,7 @@ catch(Exception e){
   public List<PublisherReport> getdayQuarterdata(String startdate, String enddate)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*),QuarterValue from enhanceduserdatabeta1 where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
+    String query = "Select count(*),QuarterValue from enhanceduserdatapatrika where date between '" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1579,7 +1579,7 @@ catch(Exception e){
   public List<PublisherReport> countBrandNameChannel(String startdate, String enddate, String channel_name)
     throws CsvExtractorException, Exception
   {
-    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
+    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
     //System.out.println(query);
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
@@ -1608,8 +1608,8 @@ catch(Exception e){
   public List<PublisherReport> countBrowserChannel(String startdate, String enddate, String channel_name)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatabeta1 where channel_name ='" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatapatrika where channel_name ='" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1635,8 +1635,8 @@ catch(Exception e){
   public List<PublisherReport> countOSChannel(String startdate, String enddate, String channel_name)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,system_os FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,system_os FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1661,8 +1661,8 @@ catch(Exception e){
   public List<PublisherReport> countModelChannel(String startdate, String enddate, String channel_name)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,modelName FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,modelName FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1689,8 +1689,8 @@ catch(Exception e){
   public List<PublisherReport> countCityChannel(String startdate, String enddate, String channel_name, String filter)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -1749,8 +1749,8 @@ catch(Exception e){
   public List<PublisherReport> countStateChannel(String startdate, String enddate, String channel_name, String filter)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -1806,8 +1806,8 @@ catch(Exception e){
   public List<PublisherReport> countCountryChannel(String startdate, String enddate, String channel_name, String filter)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,country FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by country order by count desc";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,country FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by country order by count desc";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -1880,7 +1880,7 @@ catch(Exception e){
 	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 	  
     
-	  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+	  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 		      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 	  
 		 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -1900,8 +1900,8 @@ catch(Exception e){
 		  
 		  
 		  
-		//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-	    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+		//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+	    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where channel_name = '" + 
 	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 	    CSVResult csvResult = getCsvResult(false, query);
 	    List<String> headers = csvResult.getHeaders();
@@ -1935,7 +1935,7 @@ catch(Exception e){
 		//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 			  
 		    /*
-			  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+			  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 			  
 				 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -1978,10 +1978,10 @@ catch(Exception e){
       String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 	  
 	  
-     //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+     //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
 		
 				
-				String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+				String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where channel_name = '" + 
 			      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " group by date";
 			    CSVResult csvResult = getCsvResult(false, query);
 			    List<String> headers = csvResult.getHeaders();
@@ -2027,7 +2027,7 @@ catch(Exception e){
   {
       List<PublisherReport> pubreport = new ArrayList(); 
 	  
-	  String querya1 = "SELECT COUNT(distinct(cookie_id)) FROM enhanceduserdata where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
+	  String querya1 = "SELECT COUNT(DISTINCT(cookie_id)) FROM enhanceduserdata where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
 	  
 	    //Divide count in different limits 
 	
@@ -2088,7 +2088,7 @@ catch(Exception e){
 	      Double index = startlimit +1;
 	      if(countv1 == 1)
 	    	  index=0.0;
-	      String query = "SELECT distinct(cookie_id) FROM enhanceduserdata where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
+	      String query = "SELECT DISTINCT(cookie_id) FROM enhanceduserdata where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
 		  System.out.println(query);
 	  //    Query.add(query);
 	      current_start += subrange_length;
@@ -2266,7 +2266,7 @@ catch(Exception e){
   public List<PublisherReport> gettimeofdayChannel(String startdate, String enddate, String channel_name)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+    String query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -2292,8 +2292,8 @@ catch(Exception e){
   public List<PublisherReport> countPinCodeChannel(String startdate, String enddate, String channel_name)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -2322,8 +2322,8 @@ catch(Exception e){
   public List<PublisherReport> countLatLongChannel(String startdate, String enddate, String channel_name)
     throws CsvExtractorException, Exception
   {
-    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-    String query = String.format("SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude", new Object[] { "enhanceduserdatabeta1" });
+    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+    String query = String.format("SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude", new Object[] { "enhanceduserdatapatrika" });
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -2355,7 +2355,7 @@ catch(Exception e){
   public List<PublisherReport> gettimeofdayQuarterChannel(String startdate, String enddate, String channel_name)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
+    String query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -2381,7 +2381,7 @@ catch(Exception e){
   public List<PublisherReport> gettimeofdayDailyChannel(String startdate, String enddate, String channel_name)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
+    String query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -2407,7 +2407,7 @@ catch(Exception e){
   public List<PublisherReport> getdayQuarterdataChannel(String startdate, String enddate, String channel_name)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*),QuarterValue from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
+    String query = "Select count(*),QuarterValue from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -2522,8 +2522,8 @@ if ((lines != null) && (!lines.isEmpty()) && (!((String)lines.get(0)).isEmpty())
   public static List<PublisherReport> SessionPageDepthChannel(String startdate, String enddate, String channel_name)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT session_id,referrer FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by session_id,referrer";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT session_id,referrer FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by session_id,referrer";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -2532,7 +2532,7 @@ if ((lines != null) && (!lines.isEmpty()) && (!((String)lines.get(0)).isEmpty())
 		    List<PublisherReport> pubreport = new ArrayList();
 		    Map<String,Integer> sessiondepthMap = new HashMap<String,Integer>();
           Map<String,List<String>> depthSessionMap = new HashMap<String,List<String>>();
-		    lines = processList(lines);
+		    //lines = processList(lines);
         
           Integer value = 0;
           for(Integer i=1; i < 21; i++){
@@ -2605,8 +2605,8 @@ if ((lines != null) && (!lines.isEmpty()) && (!((String)lines.get(0)).isEmpty())
 public List<PublisherReport> SessionFrequencyChannel(String startdate, String enddate, String channel_name)
 		    throws CsvExtractorException, Exception
 		  {
-		   // //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT cookie_id,session_id FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by cookie_id,session_id";
+		   // //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT cookie_id,session_id FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by cookie_id,session_id";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -2617,7 +2617,7 @@ public List<PublisherReport> SessionFrequencyChannel(String startdate, String en
 		    
 		    Map<String,Integer> sessionFrequencyMap = new HashMap<String,Integer>();
           Map<String,List<String>> FrequencySessionMap = new HashMap<String,List<String>>();
-		    lines = processList(lines);
+		    //lines = processList(lines);
         
           Integer value = 0;
           for(Integer i=1; i < 205; i++){
@@ -2788,8 +2788,8 @@ public List<PublisherReport> SessionFrequencyChannel(String startdate, String en
 public List<PublisherReport> SessionDurationChannel(String startdate, String enddate, String channel_name)
 		    throws CsvExtractorException, Exception
 		  {
-		   // //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query1 = "SELECT  session_id,max(request_time) FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by session_id";
+		   // //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query1 = "SELECT  session_id,max(request_time) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by session_id";
 		    CSVResult csvResult = getCsvResult(false, query1);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -2819,7 +2819,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		    }		    
 		    
 		    
-		    String query2 = "SELECT  session_id,min(request_time) FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by session_id";
+		    String query2 = "SELECT  session_id,min(request_time) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by session_id";
 		    CSVResult csvResult1 = getCsvResult(false, query2);
 		    List<String> headers1 = csvResult1.getHeaders();
 		    List<String> lines1 = csvResult1.getLines();
@@ -3016,13 +3016,13 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 	String query = "";        
 	  
 	        if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-			query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+			query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 		    
 			if(filter != null && !filter.isEmpty() && filter.equals("engagementTime") )
-			query= "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+			query= "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 			
 			if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-			query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
+			query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
     
 
     System.out.println(query);
@@ -3032,11 +3032,11 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
     List<PublisherReport> pubreport = new ArrayList();
     
     
- //   if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-       // lines = processList(lines);
+    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+        //lines = processList(lines);
     
    // Integer flag= 0;
-  //  Integer accumulatedcount = 0;
+//    Integer accumulatedcount = 0;
     
     
     //System.out.println(headers);
@@ -3143,9 +3143,8 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
         	}
             
             if(queryfield.equals("authorName")){
-            	obj.setArticleAuthor(data[0]);
-        		String authorId = AuthorMap1.get(data[0]);
-        		obj.setAuthorId(authorId);
+        		
+        		obj.setArticleAuthor(data[0]);
         		
         	}
         	
@@ -3183,7 +3182,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
         	}
 	          
         	if(queryfield.equals("refcurrentoriginal"))
-  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1); if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1); if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
         	
         	
      //   obj.setGender(data[0]);
@@ -4393,13 +4392,13 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 	   String query = "";
       
       if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-      query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+      query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 	    
       if(filter != null && !filter.isEmpty() && filter.equals("engagementTime") )
-      query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+      query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 	    
       if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-      query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
+      query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
       		
 		    
 		    
@@ -4411,8 +4410,8 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		    
 		   
 
-		   // if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-		   // lines = processList(lines);
+		    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+		    //lines = processList(lines);
 		    
 		    
 		    
@@ -4536,7 +4535,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 			          }
 		        
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 
 		            Random random = new Random();	
@@ -5048,13 +5047,13 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 	  
 	  
 	        if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-	        query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+	        query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 		    
 	        if(filter != null && !filter.isEmpty() && filter.equals("engagementTime"))
-	        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+	        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 	        
 	        if(filter != null && !filter.isEmpty() && filter.equals("visitorCount"))
-		    query = "Select "+queryfield+",cookie_id"+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+		    query = "Select "+queryfield+""+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 		        
 		       
 	        
@@ -5067,7 +5066,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		    
 		   
 		    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-		       // lines = processList(lines);
+		        //lines = processList(lines);
 		    
 		    
 		    
@@ -5157,7 +5156,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		        	}
 
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 
 		            Random random = new Random();	
@@ -5327,13 +5326,13 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 	  
 	  
 	        if(filtermetric == null || filtermetric.isEmpty() ||  filtermetric.equals("pageviews"))
-	        query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" GROUP BY "+queryfield;
+	        query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" GROUP BY "+queryfield;
 		    
 	        if(filtermetric != null && !filtermetric.isEmpty() && filtermetric.equals("engagementTime"))
-	        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" GROUP BY "+queryfield;
+	        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" GROUP BY "+queryfield;
 	        
 	        if(filtermetric != null && !filtermetric.isEmpty() && filtermetric.equals("visitorCount"))
-		    query = "Select "+queryfield+",count(distinct(cookie_id))"+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" GROUP BY "+queryfield+"";  
+		    query = "Select "+queryfield+""+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" GROUP BY "+queryfield+"";  
     		
 		        
 		       
@@ -5346,8 +5345,8 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		    List<PublisherReport> pubreport = new ArrayList();
 		    
 		   
-		 //   if(filtermetric != null && !filtermetric.isEmpty()  && filtermetric.equals("visitorCount") )
-		       // lines = processList(lines);
+		    if(filtermetric != null && !filtermetric.isEmpty()  && filtermetric.equals("visitorCount") )
+		        //lines = processList(lines);
 		    
 		    
 		    
@@ -5437,7 +5436,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		        	}
 
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 
 		            Random random = new Random();	
@@ -5538,15 +5537,15 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
           String query = "";
 	        
 	        if(filterMetric == null || filterMetric.isEmpty() || filterMetric.equals("pageviews"))
-	        query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+	        query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 		    
 	        
 	        if(filterMetric != null && !filterMetric.isEmpty() && filterMetric.equals("engagementTime"))
-		    query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+		    query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 			    
 	 
 	        if(filterMetric != null && !filterMetric.isEmpty() && filterMetric.equals("visitorCount"))
-		    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
+		    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
 		    
 	        System.out.println(query);
 	        CSVResult csvResult = getCsvResult(false, query);
@@ -5555,8 +5554,8 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		    List<PublisherReport> pubreport = new ArrayList();
 		    
 		    
-		//    if(filterMetric != null && !filterMetric.isEmpty()  && filterMetric.equals("visitorCount") )
-		       // lines = processList(lines);
+		    if(filterMetric != null && !filterMetric.isEmpty()  && filterMetric.equals("visitorCount") )
+		        //lines = processList(lines);
 		    
 		    
 		    //System.out.println(headers);
@@ -5647,7 +5646,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		        	}
 
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 
 		            Random random = new Random();	
@@ -5750,15 +5749,15 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
             String query = "";
 	        
 	        if(filterMetric == null || filterMetric.isEmpty() || filterMetric.equals("pageviews"))
-	        query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+	        query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 		    
 	        
 	        if(filterMetric != null && !filterMetric.isEmpty() && filterMetric.equals("engagementTime"))
-		    query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+		    query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 			    
 	 
 	        if(filterMetric != null && !filterMetric.isEmpty() && filterMetric.equals("visitorCount"))
-		    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
+		    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
 		    
 	        System.out.println(query);
 	        CSVResult csvResult = getCsvResult(false, query);
@@ -5768,7 +5767,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		    
 		    
 		    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-		       // lines = processList(lines);
+		        //lines = processList(lines);
 		    
 		    
 		    //System.out.println(headers);
@@ -5859,7 +5858,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		        	}
 
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 
 		            Random random = new Random();	
@@ -5966,72 +5965,72 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
       int  l=0;
       
       if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+    	 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
     	    
     	    
     	    if(filter != null && !filter.isEmpty()  && filter.equals("engagementTime"))
-    	     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+    	     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
     	        
     	    
     	    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount"))
-    	     	query = "Select "+queryfield+","+querygroupbybuilder+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+","+querygroupbybuilder+"";  
+    	     	query = "Select "+queryfield+","+querygroupbybuilder+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+","+querygroupbybuilder+"";  
     	        
 
     	    if(querygroupbybuilder.equals("hour")){
     	    	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
     	   
     	    	
     	    }
     	  
     	    if(querygroupbybuilder.equals("minute")){
     	    	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	     	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+    	     	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
     	   		    
     	    } 	
     	    
     	    if(querygroupbybuilder.equals("second")){
     	   // 	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	    //	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+    	    //	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
     	   		    
     	    } 	
     	    
     	    if(querygroupbybuilder.equals("hour")){
     	    	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
     	   
     	    	
     	    }
     	  
     	    if(querygroupbybuilder.equals("minute")){
     	    	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
     	   		    
     	    } 	
     	    
     	    if(querygroupbybuilder.equals("second")){
     	  //  	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-    	  //  	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+    	  //  	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
     	   		    
     	    } 	
     	    
     	   
     	    if(querygroupbybuilder.equals("hour")){
     	    	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
-    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
     	   
     	    	
     	    }
     	  
     	    if(querygroupbybuilder.equals("minute")){
     	   	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
-    	   	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+    	   	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
     	    	   
     	    } 	
     	    
     	    if(querygroupbybuilder.equals("second")){
     	    //	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
-    	    //	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+    	    //	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
     	    	   
     	   		    
     	    } 	
@@ -6044,26 +6043,26 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
     	    if(querygroupbybuilder.equals("hour") && queryfield.equals("totalViews"))
     	    {
     	    	
-    	    	query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+    	    	query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
     	    }
     	    
     	    	
     	    if(querygroupbybuilder.equals("minute") && queryfield.equals("totalViews"))
     	    {
     	    	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	    	query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
+    	    	query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
     	    }
     	    	
     	    if(querygroupbybuilder.equals("second") && queryfield.equals("totalViews"))
     	    {
     	    //	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	    //	query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
+    	    //	query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
     	    }
     	    
     	    	
     	    if(querygroupbybuilder.equals("hour") && queryfield.equals("uniqueVisitors"))
     	    {
-    	    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
     				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
     	    	
     	    }
@@ -6071,7 +6070,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
     			    	
     	    if(querygroupbybuilder.equals("minute") && queryfield.equals("uniqueVisitors"))
     	    {
-    	    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
     			      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
     	    	
     	    }
@@ -6079,7 +6078,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
     	    
     	    if(querygroupbybuilder.equals("second") && queryfield.equals("uniqueVisitors"))
     	    {
-    	    //	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	    //	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
     			//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
     	    	
     	    }
@@ -6087,7 +6086,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
     	    
     	    if(querygroupbybuilder.equals("hour") && queryfield.equals("engagementTime") )
     	    {
-    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where channel_name = '" + 
     				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
     	    	
     	    }
@@ -6095,7 +6094,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
     			    	
     	    if(querygroupbybuilder.equals("minute") && queryfield.equals("engagementTime") )
     	    {
-    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where channel_name = '" + 
     				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
     	    	
     	    }
@@ -6103,7 +6102,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
     	    
     	    if(querygroupbybuilder.equals("second") && queryfield.equals("engagementTime") )
     	    {
-    	    //	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	    //	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where channel_name = '" + 
     			//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
     	    	
     	    }
@@ -6189,13 +6188,13 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		   /* 
 	    	if(querygroupbybuilder.equals("hour") && queryfield.equals("totalViews"))
 		    {
-		    	query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+		    	query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 		    }
 		    
 	     	
 		    if(querygroupbybuilder.equals("hour") && queryfield.equals("uniqueVisitors"))
 		    {
-		    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+		    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
 					      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 		    	
 		    }
@@ -6210,7 +6209,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
 		    
-		//    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+		    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
 			    //lines = processList1(lines);
 		    
 		    //System.out.println(headers);
@@ -6351,7 +6350,7 @@ public List<PublisherReport> SessionDurationChannel(String startdate, String end
 		        	
 
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 		        	
 		        	
@@ -6597,33 +6596,33 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
     int  l=0;
     
     if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
- 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+ 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
     
     
     if(filter != null && !filter.isEmpty()  && filter.equals("engagementTime"))
-     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
         
     
     if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount"))
-     	query = "Select "+queryfield+","+querygroupbybuilder+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+     	query = "Select "+queryfield+","+querygroupbybuilder+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder+","+"cookie_id";
         
 
     if(querygroupbybuilder.equals("hour")){
     	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+    	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
    
     	
     }
   
     if(querygroupbybuilder.equals("minute")){
     	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+    	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
    		    
     } 	
     
     if(querygroupbybuilder.equals("second")){
     //	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    //	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+    //	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
    		    
     } 	
     
@@ -6632,26 +6631,26 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
     if(querygroupbybuilder.equals("hour") && queryfield.equals("totalViews"))
     {
     	
-    	query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+    	query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
     }
     
     	
     if(querygroupbybuilder.equals("minute") && queryfield.equals("totalViews"))
     {
     	
-    	query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
+    	query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
     }
     	
     if(querygroupbybuilder.equals("second") && queryfield.equals("totalViews"))
     {
     //	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-    //	query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
+    //	query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
     }
     
     	
     if(querygroupbybuilder.equals("hour") && queryfield.equals("uniqueVisitors"))
     {
-    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
 			      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
     	
     }
@@ -6659,7 +6658,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    	
     if(querygroupbybuilder.equals("minute") && queryfield.equals("uniqueVisitors"))
     {
-    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
 			      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
     	
     }
@@ -6667,7 +6666,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
     
     if(querygroupbybuilder.equals("second") && queryfield.equals("uniqueVisitors"))
     {
-    //	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+    //	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
 		//	      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
     	
     }
@@ -6675,7 +6674,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
     
     if(querygroupbybuilder.equals("hour") && queryfield.equals("engagementTime"))
     {
-    	query = "SELECT count(*) FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	query = "SELECT count(*) FROM enhanceduserdatapatrika where channel_name = '" + 
 			      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
     	
     }
@@ -6683,7 +6682,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    	
     if(querygroupbybuilder.equals("minute") && queryfield.equals("engagementTime"))
     {
-    	query = "SELECT count(*) FROM enhanceduserdatabeta1 where channel_name = '" + 
+    	query = "SELECT count(*) FROM enhanceduserdatapatrika where channel_name = '" + 
 			      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
     	
     }
@@ -6691,7 +6690,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
     
     if(querygroupbybuilder.equals("second") && queryfield.equals("engagementTime"))
     {
-    //	query = "SELECT count(*) FROM enhanceduserdatabeta1 where channel_name = '" + 
+    //	query = "SELECT count(*) FROM enhanceduserdatapatrika where channel_name = '" + 
 		//	      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
     	
     }
@@ -6704,7 +6703,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    List<PublisherReport> pubreport = new ArrayList();
 		    
 		  
-		 //   if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+		    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
 			    //lines = processList1(lines);
 		    
 		    
@@ -6877,7 +6876,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		        	
 
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 		        	
 		        	
@@ -7027,13 +7026,13 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 	  String query= "";
       
       if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-	    query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+	    query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 	    
       if(filter != null && !filter.isEmpty() && filter.equals("engagementTime") )
-      query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+      query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 	    
       if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-      query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
+      query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
 		   
       
       
@@ -7046,8 +7045,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    Integer flag = 0;
 		    //System.out.println(headers);
 		    //System.out.println(lines);
-		 //   if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-		       // lines = processList(lines);
+		    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+		        //lines = processList(lines);
 		    
 		    
 		    
@@ -7192,7 +7191,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		        	
 
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 		        	
 
@@ -8029,13 +8028,13 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 	        String query = "";
 	        
 	        if(filterMetric == null || filterMetric.isEmpty() ||  filterMetric.equals("pageviews"))
-	         query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+	         query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 		    
 	        if(filterMetric != null && !filterMetric.isEmpty() && filterMetric.equals("engagementTime"))
-		     query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+		     query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 	        
 	        if(filterMetric != null && !filterMetric.isEmpty() && filterMetric.equals("visitorCount"))
-		     query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+"";
+		     query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+"";
 	        
 	        
 	        
@@ -8045,8 +8044,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    List<String> lines = csvResult.getLines();
 		    List<PublisherReport> pubreport = new ArrayList();
 		    
-		 //   if(filterMetric != null && !filterMetric.isEmpty()  && filterMetric.equals("visitorCount") )
-		       // lines = processList(lines);
+		    if(filterMetric != null && !filterMetric.isEmpty()  && filterMetric.equals("visitorCount") )
+		        //lines = processList(lines);
 		    
 		    
 		    
@@ -8139,7 +8138,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		        	}
 		        
 		        	if(queryfield.equals("refcurrentoriginal"))
-		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+		  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 		        	
 		        	
 		        	
@@ -8245,13 +8244,13 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 			        String query = "";
 			        
 			        if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-			         query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+			         query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 				    
 			        if(filter != null && !filter.isEmpty() && filter.equals("engagementTime"))
-				     query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+				     query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 			        
 			        if(filter != null && !filter.isEmpty() && filter.equals("visitorCount"))
-				     query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+				     query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 			        
 			        
 			        
@@ -8262,7 +8261,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    List<PublisherReport> pubreport = new ArrayList();
 				    
 				    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-				       // lines = processList(lines);
+				        //lines = processList(lines);
 				    
 				    
 				    
@@ -8355,7 +8354,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				        	}
 				        
 				        	if(queryfield.equals("refcurrentoriginal"))
-				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 				        	
 				        	
 				        	
@@ -8447,73 +8446,73 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		      int  l=0;
 		      
 		      if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-		    	 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+		    	 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
 		    	    
 		    	    
 		    	    if(filter != null && !filter.isEmpty()  && filter.equals("engagementTime"))
-		    	     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+		    	     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
 		    	        
 		    	    
 		    	    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount"))
-		    	     	query = "Select "+queryfield+","+querygroupbybuilder+",count(distinct(cookie_id)) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder+"";
+		    	     	query = "Select "+queryfield+","+querygroupbybuilder+",cookie_id  from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder+"";
 		    	        
 
 		    	    if(querygroupbybuilder.equals("hour")){
 		    	    	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-		    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+		    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
 		    	   
 		    	    	
 		    	    }
 		    	  
 		    	    if(querygroupbybuilder.equals("minute")){
 		    	    	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-		    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+		    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
 		    	   		    
 		    	    } 	
 		    	    
 		    	    if(querygroupbybuilder.equals("second")){
 		    	    //	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-		    	    //	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+		    	    //	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
 		    	   		    
 		    	    } 	
 		    	    
 		    	    if(querygroupbybuilder.equals("hour")){
 		    	    	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-		    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+		    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
 		    	   
 		    	    	
 		    	    }
 		    	  
 		    	    if(querygroupbybuilder.equals("minute")){
 		    	    	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-		    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+		    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
 		    	   		    
 		    	    } 	
 		    	    
 		    	    if(querygroupbybuilder.equals("second")){
 		    	    //	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-		    	    	//query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+		    	    	//query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
 		    	   		    
 		    	    } 	
 		    	    
 		    	   
 		    	    if(querygroupbybuilder.equals("hour")){
 		    	    	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
-		    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+		    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
 		    	   
 		    	    	
 		    	    }
 		    	  
 		    	    if(querygroupbybuilder.equals("minute")){
 		    	   	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
-		    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+		    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
 		    	   		    
 		    	    } 	
 		    	    
 		    	    if(querygroupbybuilder.equals("second")){
 		    	    //	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
 		    	    	//query = "Select "
-		    	    	//		+ queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+		    	    	//		+ queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
 		    	   		    
 		    	    } 	
 		    	    
@@ -8525,26 +8524,26 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    	    if(querygroupbybuilder.equals("hour") && queryfield.equals("totalViews"))
 		    	    {
 		    	    	
-		    	    	query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+		    	    	query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 		    	    }
 		    	    
 		    	    	
 		    	    if(querygroupbybuilder.equals("minute") && queryfield.equals("totalViews"))
 		    	    {
 		    	   	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-		    	    	query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
+		    	    	query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
 		    	    }
 		    	    	
 		    	    if(querygroupbybuilder.equals("second") && queryfield.equals("totalViews"))
 		    	    {
 		    	    	//if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-		    	    	//query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
+		    	    	//query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
 		    	    }
 		    	    
 		    	    	
 		    	    if(querygroupbybuilder.equals("hour") && queryfield.equals("uniqueVisitors"))
 		    	    {
-		    	    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
+		    	    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
 		    				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 		    	    	
 		    	    }
@@ -8552,7 +8551,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    			    	
 		    	    if(querygroupbybuilder.equals("minute") && queryfield.equals("uniqueVisitors"))
 		    	    {
-		    	    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
+		    	    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
 		    			      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +  " GROUP BY date_histogram(field='request_time','interval'='1m')";
 		    	    
 		    	    }
@@ -8560,7 +8559,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    	    
 		    	    if(querygroupbybuilder.equals("second") && queryfield.equals("uniqueVisitors"))
 		    	    {
-		    	    //	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
+		    	    //	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
 		    			//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
 		    	    	
 		    	    }
@@ -8568,7 +8567,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    	    
 		    	    if(querygroupbybuilder.equals("hour") && queryfield.equals("engagementTime"))
 		    	    {
-		    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
+		    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
 		    				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 		    	    	
 		    	    }
@@ -8576,7 +8575,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    			    	
 		    	    if(querygroupbybuilder.equals("minute") && queryfield.equals("engagementTime") )
 		    	    {
-		    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
+		    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
 		    			      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
 		    	    	
 		    	    }
@@ -8584,7 +8583,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    	    
 		    	    if(querygroupbybuilder.equals("second") && queryfield.equals("engagementTime") )
 		    	    {
-		    	    //	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
+		    	    //	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and  channel_name = '" + 
 		    			//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
 		    	    	
 		    	    }
@@ -8598,7 +8597,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    List<String> lines = csvResult.getLines();
 				  
 				    
-				 //   if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+				    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
 					    //lines = processList1(lines);
 				    
 				    
@@ -8743,7 +8742,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				        
 				        	
 				        	if(queryfield.equals("refcurrentoriginal"))
-				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 				        	
 				        	
 				        	//   obj.setCode(code);
@@ -8893,13 +8892,13 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 			    String query = "";
 			  
 		        if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-		        query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionid+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+		        query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionid+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 			   
 		        if(filter != null && !filter.isEmpty() && filter.equals("engagementTime") )
-		        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionid+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+		        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionid+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 				   
 		        if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-		        query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionid+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
+		        query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionid+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' GROUP by "+ queryfield+"";  
 		        		
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
@@ -8908,8 +8907,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    List<PublisherReport> pubreport = new ArrayList();
 				    
 
-				 //   if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-				   // lines = processList(lines);
+				    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+				    //lines = processList(lines);
 				  
 				  
 				  
@@ -9059,7 +9058,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				        	}
 
 				        	if(queryfield.equals("refcurrentoriginal"))
-				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 				        	
 				        	
 
@@ -9907,13 +9906,13 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 			        String query = "";
 			  
 			        if(filtermetric == null || filtermetric.isEmpty() ||  filtermetric.equals("pageviews"))
-			        query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+			        query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 				    
 			        if(filtermetric != null && !filtermetric.isEmpty() && filtermetric.equals("engagementTime") )
-			        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+			        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 				    
 			        if(filtermetric != null && !filtermetric.isEmpty() && filtermetric.equals("visitorCount"))
-				    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+"";
+				    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+"";
 			        
 			        
 			        System.out.println(query);
@@ -9922,8 +9921,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    List<String> lines = csvResult.getLines();
 				    List<PublisherReport> pubreport = new ArrayList();
 				    
-				 //   if(filtermetric != null && !filtermetric.isEmpty()  && filtermetric.equals("visitorCount") )
-				       // lines = processList(lines);
+				    if(filtermetric != null && !filtermetric.isEmpty()  && filtermetric.equals("visitorCount") )
+				        //lines = processList(lines);
 				    
 				    
 				    
@@ -10015,7 +10014,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				        	}
                        
 				        	if(queryfield.equals("refcurrentoriginal"))
-				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);if(filter.containsKey("authorName")){String authorName = article.getAuthor();obj.setArticleAuthor(filter.get("authorName"));String authorId = article.getAuthorId();obj.setAuthorId(AuthorMap1.get(filter.get("authorName")));}List<String> tags1 = article.getTags();if(tags1!=null) {obj.setArticleTag(tags1);}if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+				  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);if(filter.containsKey("authorName")){String authorName = article.getAuthor();obj.setArticleAuthor(filter.get("authorName"));String authorId = article.getAuthorId();obj.setAuthorId(AuthorMap1.get(filter.get("authorName")));}String tags = article.getTag();if(tags!=null) {  List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);}if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 				        	
 
 				            Random random = new Random();	
@@ -10129,13 +10128,13 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 					        String query = "";
 					  
 					        if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-					        query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+					        query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 						    
 					        if(filter != null && !filter.isEmpty() && filter.equals("engagementTime") )
-					        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+					        query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 						    
 					        if(filter != null && !filter.isEmpty() && filter.equals("visitorCount"))
-						    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
+						    query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where "+queryfilterbuilder+" and refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield;
 					        
 					        
 					        System.out.println(query);
@@ -10145,7 +10144,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						    List<PublisherReport> pubreport = new ArrayList();
 						    
 						    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
-						       // lines = processList(lines);
+						        //lines = processList(lines);
 						    
 						    
 						    
@@ -10237,7 +10236,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						        	}
                                  
 						        	if(queryfield.equals("refcurrentoriginal"))
-						  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+						  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 						        	
 
 						            Random random = new Random();	
@@ -10321,73 +10320,73 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				      int  l=0;
 				      
 				      if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-				    	 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+				    	 	query = "Select count(*),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
 				    	    
 				    	    
 				    	    if(filter != null && !filter.isEmpty()  && filter.equals("engagementTime"))
-				    	     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
+				    	     	query = "Select SUM(engagementTime),"+queryfield+","+querygroupbybuilder+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder;
 				    	        
 				    	    
 				    	    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount"))
-				    	     	query = "Select "+queryfield+","+querygroupbybuilder+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder+"";
+				    	     	query = "Select "+queryfield+","+querygroupbybuilder+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+querygroupbybuilder+"";
 				    	        
 
 				    	    if(querygroupbybuilder.equals("hour")){
 				    	    	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-				    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+				    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
 				    	   
 				    	    	
 				    	    }
 				    	  
 				    	    if(querygroupbybuilder.equals("minute")){
 				    	    	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-				    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+				    	    	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
 				    	   		    
 				    	    } 	
 				    	    
 				    	    if(querygroupbybuilder.equals("second")){
 				    	   // 	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-				    	    //	query = "Select count(*),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+				    	    //	query = "Select count(*),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
 				    	   		    
 				    	    } 	
 				    	    
 				    	    if(querygroupbybuilder.equals("hour")){
 				    	    	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-				    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+				    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
 				    	   
 				    	    	
 				    	    }
 				    	  
 				    	    if(querygroupbybuilder.equals("minute")){
 				    	    	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-				    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+				    	    	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
 				    	   		    
 				    	    } 	
 				    	    
 				    	    if(querygroupbybuilder.equals("second")){
 				    	    //	if(filter != null && !filter.isEmpty() &&  filter.equals("engagementTime"))
-				    	    //	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+				    	    //	query = "Select SUM(engagementTime),"+queryfield+" from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
 				    	   		    
 				    	    } 	
 				    	    
 				    	   
 				    	    if(querygroupbybuilder.equals("hour")){
 				    	    	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
-				    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
+				    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1h')";
 				    	   
 				    	    	
 				    	    }
 				    	  
 				    	    if(querygroupbybuilder.equals("minute")){
 				    	    	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
-				    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
+				    	    	query = "Select "+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1m')";
 				    	   		    
 				    	    } 	
 				    	    
 				    	    if(querygroupbybuilder.equals("second")){
 				    	 //   	if(filter != null && !filter.isEmpty() &&  filter.equals("visitorCount"))
 				    	    //	query = "Select "
-				    	    	//		+ ","+queryfield+",COUNT(DISTINCT(cookie_id))  FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
+				    	    	//		+ ","+queryfield+",COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY "+queryfield+","+"date_histogram(field='request_time','interval'='1s')";
 				    	   		    
 				    	    } 	
 				    	    
@@ -10399,26 +10398,26 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    	    if(querygroupbybuilder.equals("hour") && queryfield.equals("totalViews"))
 				    	    {
 				    	    	
-				    	    	query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+				    	    	query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 				    	    }
 				    	    
 				    	    	
 				    	    if(querygroupbybuilder.equals("minute") && queryfield.equals("totalViews"))
 				    	    {
 				    	   	   if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-				    	    	query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
+				    	    	query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
 				    	    }
 				    	    	
 				    	    if(querygroupbybuilder.equals("second") && queryfield.equals("totalViews"))
 				    	    {
 				    	    //	if(filter == null || filter.isEmpty() ||  filter.equals("pageviews"))
-				    	      //  query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
+				    	      //  query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
 				    	    }
 				    	    
 				    	    	
 				    	    if(querygroupbybuilder.equals("hour") && queryfield.equals("uniqueVisitors") )
 				    	    {
-				    	    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
+				    	    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
 				    				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 				    	    	
 				    	    }
@@ -10426,7 +10425,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    			    	
 				    	    if(querygroupbybuilder.equals("minute") && queryfield.equals("uniqueVisitors") )
 				    	    {
-				    	    	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
+				    	    	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
 				    				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
 				    	    	
 				    	    }
@@ -10434,7 +10433,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    	    
 				    	    if(querygroupbybuilder.equals("second") && queryfield.equals("uniqueVisitors"))
 				    	    {
-				    	    //	query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
+				    	    //	query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
 				    			//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
 				    	    	
 				    	    }
@@ -10442,7 +10441,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    	    
 				    	    if(querygroupbybuilder.equals("hour") && queryfield.equals("engagementTime"))
 				    	    {
-				    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
+				    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
 				    				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 				    	    	
 				    	    }
@@ -10450,7 +10449,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    			    	
 				    	    if(querygroupbybuilder.equals("minute") && queryfield.equals("engagementTime")  )
 				    	    {
-				    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
+				    	    	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
 				    				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
 				    	    	
 				    	    }
@@ -10458,7 +10457,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				    	    
 				    	    if(querygroupbybuilder.equals("second") && queryfield.equals("engagementTime") )
 				    	    {
-				    	   // 	query = "SELECT SUM(engagementTime) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
+				    	   // 	query = "SELECT SUM(engagementTime) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and  channel_name = '" + 
 				    			//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1s')";
 				    	    	
 				    	    }
@@ -10470,7 +10469,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						    List<String> headers = csvResult.getHeaders();
 						    List<String> lines = csvResult.getLines();
 						   
-						//    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
+						    if(filter != null && !filter.isEmpty()  && filter.equals("visitorCount") )
 							    //lines = processList1(lines);
 						    
 						   
@@ -10610,7 +10609,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						        	}
 
 						        	if(queryfield.equals("refcurrentoriginal"))
-						  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
+						  	          {String articleparts[] = data[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data[0]); Article article = GetMiddlewareData.getArticleMetaData(data[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}}
 						        	
 						        	
 						        	
@@ -10760,7 +10759,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
   public List<PublisherReport> getAgegroupChannel(String startdate, String enddate, String channel_name)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*),agegroup from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
+    String query = "Select count(*),agegroup from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -10788,7 +10787,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
   public List<PublisherReport> getISPChannel(String startdate, String enddate, String channel_name)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query = "Select count(*),ISP from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
+    String query = "Select count(*),ISP from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
     CSVResult csvResult = getCsvResult(false, query);
     List<String> headers = csvResult.getHeaders();
     List<String> lines = csvResult.getLines();
@@ -10816,7 +10815,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
   public List<PublisherReport> getOrgChannel(String startdate, String enddate, String channel_name)
     throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
   {
-    String query1 = "Select count(*),organisation from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
+    String query1 = "Select count(*),organisation from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
     CSVResult csvResult1 = getCsvResult(false, query1);
     List<String> headers1 = csvResult1.getHeaders();
     List<String> lines1 = csvResult1.getLines();
@@ -10871,18 +10870,18 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
       }
 
 		  
-	        String query1 = "Select Distinct(gender) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+	        String query1 = "Select Distinct(gender) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult1 = getCsvResult(false, query1);
 		    List<String> headers1 = csvResult1.getHeaders();
 		    List<String> lines1 = csvResult1.getLines();
 		   
-		    String query2 = "Select Distinct(agegroup) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query2 = "Select Distinct(agegroup) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult2 = getCsvResult(false, query2);
 		    List<String> headers2 = csvResult2.getHeaders();
 		    List<String> lines2 = csvResult2.getLines();
 		    
 		    
-		    String query3 = "Select Distinct(incomelevel) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query3 = "Select Distinct(incomelevel) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult3 = getCsvResult(false, query3);
 		    List<String> headers3 = csvResult3.getHeaders();
 		    List<String> lines3 = csvResult3.getLines();
@@ -10890,19 +10889,19 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    
 		    
 		    
-		    String query5 = "Select Distinct(device) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query5 = "Select Distinct(device) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult5 = getCsvResult(false, query5);
 		    List<String> headers5 = csvResult5.getHeaders();
 		    List<String> lines5 = csvResult5.getLines();
 		    
 		    
 
-		    String query6 = "Select Distinct(modelName) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query6 = "Select Distinct(modelName) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult6 = getCsvResult(false, query6);
 		    List<String> headers6 = csvResult6.getHeaders();
 		    List<String> lines6 = csvResult6.getLines();
 		    
-		    String query7 = "Select Distinct(system_os) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query7 = "Select Distinct(system_os) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult7 = getCsvResult(false, query7);
 		    List<String> headers7 = csvResult7.getHeaders();
 		    List<String> lines7 = csvResult7.getLines();
@@ -10919,17 +10918,17 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		    
 		    
 		    
-		    String query9 = "Select count(*) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query9 = "Select count(*) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult9 = getCsvResult(false, query9);
 		    List<String> headers9 = csvResult9.getHeaders();
 		    List<String> lines9 = csvResult9.getLines();
 		    
-		    String query10 = "Select SUM(engagementTime) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query10 = "Select SUM(engagementTime) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult10 = getCsvResult(false, query10);
 		    List<String> headers10 = csvResult10.getHeaders();
 		    List<String> lines10 = csvResult10.getLines();
 		    
-		    String query11 = "Select distinct(session_id) from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
+		    String query11 = "Select distinct(session_id) from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 		    CSVResult csvResult11 = getCsvResult(false, query11);
 		    List<String> headers11 = csvResult11.getHeaders();
 		    List<String> lines11 = csvResult11.getLines();
@@ -11004,7 +11003,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
       }
 	  
 	  
-	    String query4 = "Select count(*),city from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" group by city";
+	    String query4 = "Select count(*),city from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" group by city";
 	    CSVResult csvResult4 = getCsvResult(false, query4);
 	    List<String> headers4 = csvResult4.getHeaders();
 	    List<String> lines4 = csvResult4.getLines();
@@ -11060,7 +11059,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
     }
 	  
 	  
-    String query7 = "Select count(*),ISP from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" group by ISP";
+    String query7 = "Select count(*),ISP from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" group by ISP";
     CSVResult csvResult7 = getCsvResult(false, query7);
     List<String> headers7 = csvResult7.getHeaders();
     List<String> lines7 = csvResult7.getLines();
@@ -11114,7 +11113,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
      
     }
 	  
-	    String query8 = "Select count(*),audience_segment,subcategory from enhanceduserdatabeta1 where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" group by audience_segment,subcategory";
+	    String query8 = "Select count(*),audience_segment,subcategory from enhanceduserdatapatrika where "+queryfilterbuilder+"and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'"+" group by audience_segment,subcategory";
 	    CSVResult csvResult8 = getCsvResult(false, query8);
 	    List<String> headers8 = csvResult8.getHeaders();
 	    List<String> lines8 = csvResult8.getLines();
@@ -11163,7 +11162,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
   public List<PublisherReport> countBrandNameChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws CsvExtractorException, Exception
 		  {
-		    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
+		    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
 		    //System.out.println(query);
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
@@ -11195,8 +11194,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countBrowserChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatabeta1 where channel_name ='" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatapatrika where channel_name ='" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -11225,8 +11224,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countOSChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,system_os FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,system_os FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os";
 		    System.out.println(query);
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
@@ -11259,8 +11258,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countModelChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,modelName FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,modelName FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -11297,8 +11296,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countCityChannelArticle(String startdate, String enddate, String channel_name, String articlename, String filter)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -11361,8 +11360,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countStateChannelArticle(String startdate, String enddate, String channel_name, String articlename, String filter)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -11423,8 +11422,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countCountryChannelArticle(String startdate, String enddate, String channel_name, String articlename, String filter)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,country FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by country order by count desc";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,country FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by country order by count desc";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -11499,7 +11498,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 			  
 		    
-			  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
+			  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
 				      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 			  
 			//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -11520,8 +11519,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  
 				  
 				  
-				//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-			    String query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+				//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+			    String query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 			      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 			      CSVResult csvResult = getCsvResult(false, query);
 			      List<String> headers = csvResult.getHeaders();
@@ -11555,7 +11554,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -11596,8 +11595,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -11633,7 +11632,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -11654,8 +11653,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -11712,7 +11711,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
               String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 					  
               
-              String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
+              String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + benchmarkStartDate  + "'" + " and " + "'" + benchmarkEndDate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -11733,8 +11732,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -11785,7 +11784,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -11806,8 +11805,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -11841,7 +11840,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -11882,8 +11881,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                       String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -11925,7 +11924,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -11966,8 +11965,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(*) as visits FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(*) as visits FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" +benchmarkEndDate + "'";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -12002,7 +12001,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12023,8 +12022,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(*) as visits FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(*) as visits FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -12072,7 +12071,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12093,8 +12092,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12128,7 +12127,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12169,8 +12168,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                               String benchmarkStartDate = df.format(benchmarkStartDate1);	  
                               String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" +  benchmarkEndDate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12207,7 +12206,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12228,8 +12227,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12282,7 +12281,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 					
 					  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12303,8 +12302,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12351,7 +12350,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12372,8 +12371,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12407,7 +12406,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12441,8 +12440,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 							  Date benchmarkEndDate = date1; 
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12491,7 +12490,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12526,8 +12525,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12562,7 +12561,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12609,8 +12608,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 							  
 							  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate+ "'" + " and " + "'" + benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12645,7 +12644,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12666,8 +12665,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12703,7 +12702,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -12740,8 +12739,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 							  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate  + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -12776,7 +12775,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  {
 		      List<PublisherReport> pubreport = new ArrayList(); 
 			  
-			  String querya1 = "SELECT COUNT(distinct(cookie_id)) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
+			  String querya1 = "SELECT COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
 			  
 			    //Divide count in different limits 
 			
@@ -12837,7 +12836,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 			      Double index = startlimit +1;
 			      if(countv1 == 1)
 			    	  index=0.0;
-			      String query = "SELECT distinct(cookie_id) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
+			      String query = "SELECT DISTINCT(cookie_id) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
 				  System.out.println(query);
 			  //    Query.add(query);
 			      current_start += subrange_length;
@@ -13015,7 +13014,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> gettimeofdayChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+		    String query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13043,8 +13042,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countPinCodeChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13073,8 +13072,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countLatLongChannelArticle(String startdate, String enddate, String channel_name, String articlename, String filter)
 		    throws CsvExtractorException, Exception
 		  {
-		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-		    String query = "SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude";
+		    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+		    String query = "SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13119,7 +13118,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> gettimeofdayQuarterChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
+		    String query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13147,7 +13146,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> gettimeofdayDailyChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
+		    String query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13176,7 +13175,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getdayQuarterdataChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query = "Select count(*),QuarterValue from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
+		    String query = "Select count(*),QuarterValue from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13223,7 +13222,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getGenderChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query = "Select count(*),gender from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY gender";
+		    String query = "Select count(*),gender from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY gender";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13253,7 +13252,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getAgegroupChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query = "Select count(*),agegroup from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
+		    String query = "Select count(*),agegroup from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13281,7 +13280,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getISPChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query = "Select count(*),ISP from enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
+		    String query = "Select count(*),ISP from enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
 		    CSVResult csvResult = getCsvResult(false, query);
 		    List<String> headers = csvResult.getHeaders();
 		    List<String> lines = csvResult.getLines();
@@ -13312,7 +13311,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getOrgChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 		    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 		  {
-		    String query1 = "Select count(*),organisation from enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
+		    String query1 = "Select count(*),organisation from enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
 		    CSVResult csvResult1 = getCsvResult(false, query1);
 		    List<String> headers1 = csvResult1.getHeaders();
 		    List<String> lines1 = csvResult1.getLines();
@@ -13345,7 +13344,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getChannelSectionArticleList(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -13379,7 +13378,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getChannelArticleReferrerList(String startdate, String enddate, String channel_name, String articlename)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -13414,7 +13413,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getChannelArticleReferrerList1(String startdate, String enddate, String channel_name, String articlename)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -13486,7 +13485,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getDeviceTypeChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -13547,7 +13546,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getIncomeChannelArticle(String startdate, String enddate, String channel_name, String articlename)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -13608,7 +13607,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getArticleMetaData(String startdate, String enddate, String channel_name, String articlename)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -13654,7 +13653,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getChannelArticleReferredPostsList(String startdate, String enddate, String channel_name, String articlename)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),clickurloriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY clickurloriginal";
+				    String query1 = "Select count(*),clickurloriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY clickurloriginal";
 				    
 				    
 				    Site site = GetMiddlewareData.getSiteDetails(channel_name);
@@ -13687,7 +13686,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getChannelArticleReferredPostsListInternal(String startdate, String enddate, String channel_name, String articlename, String filter, String typefilter)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),clickurloriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY clickurloriginal";
+				    String query1 = "Select count(*),clickurloriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY clickurloriginal";
 				    
 				    
 				    Site site = GetMiddlewareData.getSiteDetails(channel_name);
@@ -13803,7 +13802,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> getChannelSectionArticleCount(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -13835,7 +13834,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		  public List<PublisherReport> countBrandNameChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws CsvExtractorException, Exception
 				  {
-				    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
+				    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
 				    //System.out.println(query);
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
@@ -13867,8 +13866,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countBrowserChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatabeta1 where channel_name ='" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatapatrika where channel_name ='" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -13897,8 +13896,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countOSChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,system_os FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,system_os FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os";
 				    System.out.println(query);
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
@@ -13925,8 +13924,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countModelChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,modelName FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,modelName FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -13956,8 +13955,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countCityChannelSection(String startdate, String enddate, String channel_name, String sectionname, String filter)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
 				    System.out.println(query);
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
@@ -14019,8 +14018,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countStateChannelSection(String startdate, String enddate, String channel_name, String sectionname, String filter)
 						    throws CsvExtractorException, Exception
 						  {
-						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-						    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
+						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+						    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
 						    System.out.println(query);
 						    CSVResult csvResult = getCsvResult(false, query);
 						    List<String> headers = csvResult.getHeaders();
@@ -14078,8 +14077,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countCountryChannelSection(String startdate, String enddate, String channel_name, String sectionname, String filter)
 						    throws CsvExtractorException, Exception
 						  {
-						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-						    String query = "SELECT COUNT(*)as count,country FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by country order by count desc";
+						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+						    String query = "SELECT COUNT(*)as count,country FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by country order by count desc";
 						    System.out.println(query);
 						    CSVResult csvResult = getCsvResult(false, query);
 						    List<String> headers = csvResult.getHeaders();
@@ -14144,7 +14143,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14165,8 +14164,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 					      CSVResult csvResult = getCsvResult(false, query);
 					      List<String> headers = csvResult.getHeaders();
@@ -14204,7 +14203,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14245,8 +14244,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14299,7 +14298,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14320,8 +14319,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14377,7 +14376,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                       String benchmarkEndDate  = df.format(benchmarkEndDate1);	
                       
                       
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14398,8 +14397,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14440,7 +14439,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14461,8 +14460,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14494,7 +14493,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14535,8 +14534,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                               String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate  + "'" + " and " + "'" + benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14573,7 +14572,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14594,8 +14593,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14654,7 +14653,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                       String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 					  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14675,8 +14674,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14728,7 +14727,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14749,8 +14748,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14784,7 +14783,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14824,8 +14823,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                               String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" +  benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14869,7 +14868,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14890,8 +14889,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*) as visits FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*) as visits FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -14926,7 +14925,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -14968,8 +14967,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*) as visits FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*) as visits FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -15015,7 +15014,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15036,8 +15035,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15088,7 +15087,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 							  Date benchmarkEndDate = date1;
 							  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15109,8 +15108,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" +benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate  + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15153,7 +15152,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15195,8 +15194,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" +  benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15237,7 +15236,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15258,8 +15257,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15292,7 +15291,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15313,8 +15312,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15347,7 +15346,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15381,8 +15380,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime) as eT FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" +benchmarkEndDate + "'";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15420,7 +15419,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15441,8 +15440,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15494,7 +15493,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 							  
 							  
 							  
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15515,8 +15514,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate 
 									      + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
@@ -15559,7 +15558,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15580,8 +15579,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15614,7 +15613,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15649,8 +15648,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime) as eT,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate  + "'" + " and " + "'" + benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15686,7 +15685,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15707,8 +15706,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15764,7 +15763,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 							  
 							  
 							  
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate+ "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15785,8 +15784,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits,date FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15836,7 +15835,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15857,8 +15856,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime)as eT FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime)as eT FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15891,7 +15890,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15931,8 +15930,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		                              String benchmarkStartDate = df.format(benchmarkStartDate1);	  
 		                              String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime)as eT FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime)as eT FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -15971,7 +15970,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -15992,8 +15991,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16050,7 +16049,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                               String benchmarkStartDate = df.format(benchmarkStartDate1);	  
                               String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 							  
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16071,8 +16070,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" +  benchmarkStartDate+ "'" + " and " + "'" + benchmarkEndDate + "'" + " group by date";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16116,7 +16115,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16137,8 +16136,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16173,7 +16172,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+									  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16213,8 +16212,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 		                              String benchmarkEndDate  = df.format(benchmarkEndDate1);	
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT SUM(engagementTime)as eT,date FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16255,7 +16254,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16276,8 +16275,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits,gender FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits,gender FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY gender, date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16312,7 +16311,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16333,8 +16332,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16367,7 +16366,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16388,8 +16387,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16424,7 +16423,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16465,8 +16464,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits FROM enhanceduserdatabeta1 where channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits FROM enhanceduserdatapatrika where channel_name = '" + 
 									      channel_name + "' and date between " + "'" + benchmarkStartDate + "'" + " and " + "'" + benchmarkEndDate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16518,7 +16517,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 									  
 								    
-									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+									//  String query00 = "SELECT date_histogram(field=request_time,interval=1h)cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 									//	      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 									  
 									//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -16539,8 +16538,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 										  
 										  
 										  
-										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-									    String query = "SELECT count(*)as visits FROM enhanceduserdatabeta1 where refcurrentoriginal channel_name = '" + 
+										//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+									    String query = "SELECT count(*)as visits FROM enhanceduserdatapatrika where refcurrentoriginal channel_name = '" + 
 									      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1m')";
 									      CSVResult csvResult = getCsvResult(false, query);
 									      List<String> headers = csvResult.getHeaders();
@@ -16577,7 +16576,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  {
 				      List<PublisherReport> pubreport = new ArrayList(); 
 					  
-					  String querya1 = "SELECT COUNT(distinct(cookie_id)) FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
+					  String querya1 = "SELECT COUNT(DISTINCT(cookie_id)) FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
 					  
 					    //Divide count in different limits 
 					
@@ -16638,7 +16637,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 					      Double index = startlimit +1;
 					      if(countv1 == 1)
 					    	  index=0.0;
-					      String query = "SELECT distinct(cookie_id) FROM enhanceduserdatabeta1 where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
+					      String query = "SELECT DISTINCT(cookie_id) FROM enhanceduserdatapatrika where refcurrentoriginal= '"+articlename+"' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
 						  System.out.println(query);
 					  //    Query.add(query);
 					      current_start += subrange_length;
@@ -16816,7 +16815,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> gettimeofdayChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+				    String query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -16844,8 +16843,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countPinCodeChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -16875,8 +16874,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countLatLongChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -16909,7 +16908,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> gettimeofdayQuarterChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
+				    String query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -16937,7 +16936,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> gettimeofdayDailyChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*) from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
+				    String query = "Select count(*) from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -16966,7 +16965,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getdayQuarterdataChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),QuarterValue from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
+				    String query = "Select count(*),QuarterValue from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -17013,7 +17012,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getGenderChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),gender from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY gender";
+				    String query = "Select count(*),gender from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY gender";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -17043,7 +17042,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getAgegroupChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),agegroup from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
+				    String query = "Select count(*),agegroup from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -17071,7 +17070,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getISPChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),ISP from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
+				    String query = "Select count(*),ISP from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -17102,7 +17101,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getOrgChannelSection(String startdate, String enddate, String channel_name, String sectionname)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),organisation from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
+				    String query1 = "Select count(*),organisation from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -17139,7 +17138,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getChannelSectionReferrerList(String startdate, String enddate, String channel_name, String sectionname)
 						    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 						  {
-						    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where refcurrent like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+						    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where refcurrent like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 						    CSVResult csvResult1 = getCsvResult(false, query1);
 						    List<String> headers1 = csvResult1.getHeaders();
 						    List<String> lines1 = csvResult1.getLines();
@@ -17172,7 +17171,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getChannelSectionReferredPostsList(String startdate, String enddate, String channel_name, String sectionname)
 						    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 						  {
-						    String query1 = "Select count(*),clickedurl from enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY clickedurl";
+						    String query1 = "Select count(*),clickedurl from enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY clickedurl";
 						    CSVResult csvResult1 = getCsvResult(false, query1);
 						    List<String> headers1 = csvResult1.getHeaders();
 						    List<String> lines1 = csvResult1.getLines();
@@ -17209,7 +17208,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17230,8 +17229,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query00);
 							      List<String> headers = csvResult.getHeaders();
@@ -17276,7 +17275,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  {
 							  
 							  
-					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17297,8 +17296,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -17342,7 +17341,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countLoyalUsersChannelSectionDatewise(String startdate, String enddate, String channel_name, String sectionname,String filter)
 						    throws CsvExtractorException, Exception
 						  {
-					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17363,8 +17362,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -17413,7 +17412,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17434,8 +17433,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query00);
 							      List<String> headers = csvResult.getHeaders();
@@ -17480,7 +17479,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  {
 							  
 							  
-					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17501,8 +17500,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -17546,7 +17545,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countLoyalUsersChannelArticleDatewise(String startdate, String enddate, String channel_name, String articlename,String filter)
 						    throws CsvExtractorException, Exception
 						  {
-					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+articlename+"%' and channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17567,8 +17566,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -17618,7 +17617,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17639,8 +17638,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query00);
 							      List<String> headers = csvResult.getHeaders();
@@ -17689,19 +17688,19 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT COUNT(*)as count, cookie_id,"+groupby+" FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT COUNT(*)as count, cookie_id,"+groupby+" FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +" group by cookie_id,"+groupby+" limit 20000000";
 							  
 							
 							  
 							  if(groupby.equals("hour")){
-						    		query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+						    		query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,date_histogram(field='request_time','interval'='1h') limit 20000000";
 						    	}
 
 			                
 							  if(groupby.equals("minute")){
-				                	query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				                	query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 										      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,date_histogram(field='request_time','interval'='1m') limit 20000000";	
 						    	}
 
@@ -17726,8 +17725,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 							    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 							      CSVResult csvResult = getCsvResult(false, query00);
 							      List<String> headers = csvResult.getHeaders();
@@ -17828,19 +17827,19 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 					  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 					    
-					  String query00 = "SELECT COUNT(*)as count, cookie_id,"+groupby+" FROM enhanceduserdatabeta1 where channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id,"+groupby+" FROM enhanceduserdatapatrika where channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,"+groupby+" limit 20000000";
 					  
 					
 					  
 					  if(groupby.equals("hour")){
-				    		query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				    		query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,date_histogram(field='request_time','interval'='1h') limit 20000000";
 				    	}
 
 	                
 					  if(groupby.equals("minute")){
-		                	query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+		                	query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,date_histogram(field='request_time','interval'='1m') limit 20000000";	
 				    	}
 
@@ -17865,8 +17864,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -17960,7 +17959,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  {
 							  
 							  
-					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -17981,8 +17980,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -18027,7 +18026,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countLoyalUsersChannelDatewise(String startdate, String enddate, String channel_name, String filter)
 						    throws CsvExtractorException, Exception
 						  {
-					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -18048,8 +18047,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -18094,19 +18093,19 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countLoyalUsersChannelDatewisegroupby(String startdate, String enddate, String channel_name,String groupby)
 						    throws CsvExtractorException, Exception
 						  {
-					  String query00 = "SELECT COUNT(*)as count, cookie_id,"+groupby+" FROM enhanceduserdatabeta1 where channel_name = '" + 
+					  String query00 = "SELECT COUNT(*)as count, cookie_id,"+groupby+" FROM enhanceduserdatapatrika where channel_name = '" + 
 						      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,"+groupby+" limit 20000000";
 					  
 					
 					  
 					  if(groupby.equals("hour")){
-				    		query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				    		query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,date_histogram(field='request_time','interval'='1h') limit 20000000";
 				    	}
 
 	                
 					  if(groupby.equals("minute")){
-		                	query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+		                	query00 =  "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id,date_histogram(field='request_time','interval'='1m') limit 20000000";	
 				    	}
 
@@ -18131,8 +18130,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 					    //  channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					      CSVResult csvResult = getCsvResult(false, query00);
 					      List<String> headers = csvResult.getHeaders();
@@ -18228,7 +18227,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -18249,8 +18248,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*) as visits FROM enhanceduserdatabeta1 where channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*) as visits FROM enhanceduserdatapatrika where channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -18284,7 +18283,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -18324,8 +18323,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
                               String benchmarkEndDate  = df.format(benchmarkEndDate1);	
                               
                               
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(*) as visits FROM enhanceduserdatabeta1 where channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(*) as visits FROM enhanceduserdatapatrika where channel_name = '" + 
 							      channel_name + "' and date between " + "'" +  benchmarkStartDate  + "'" + " and " + "'" + benchmarkEndDate  + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -18367,7 +18366,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 							  
 						    
-							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 								      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 							  
 							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -18388,8 +18387,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 								  
 								  
 								  
-								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-							    String query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+							    String query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
 							      channel_name + "' and date between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 							      CSVResult csvResult = getCsvResult(false, query);
 							      List<String> headers = csvResult.getHeaders();
@@ -18419,7 +18418,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countBrandNameChannelLive(String startdate, String enddate, String channel_name)
 				    throws CsvExtractorException, Exception
 				  {
-				    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
+				    String query = "SELECT COUNT(*)as count,brandName FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by brandName";
 				    //System.out.println(query);
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
@@ -18448,8 +18447,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countBrowserChannelLive(String startdate, String enddate, String channel_name)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatabeta1 where channel_name ='" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,browser_name FROM enhanceduserdatapatrika where channel_name ='" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by browser_name";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -18475,8 +18474,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countOSChannelLive(String startdate, String enddate, String channel_name)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = String.format("SELECT COUNT(*)as count,system_os FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os", new Object[] { "enhanceduserdatabeta1" });
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = String.format("SELECT COUNT(*)as count,system_os FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by system_os", new Object[] { "enhanceduserdatapatrika" });
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -18501,8 +18500,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countModelChannelLive(String startdate, String enddate, String channel_name)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = String.format("SELECT COUNT(*)as count,modelName FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName", new Object[] { "enhanceduserdatabeta1" });
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = String.format("SELECT COUNT(*)as count,modelName FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by modelName", new Object[] { "enhanceduserdatapatrika" });
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -18529,8 +18528,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countCityChannelLive(String startdate, String enddate, String channel_name,String filter)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -18589,8 +18588,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countStateChannelLive(String startdate, String enddate, String channel_name,String filter)
 						    throws CsvExtractorException, Exception
 						  {
-						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-						    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
+						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+						    String query = "SELECT COUNT(*)as count,state FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by state order by count desc";
 						    CSVResult csvResult = getCsvResult(false, query);
 						    List<String> headers = csvResult.getHeaders();
 						    List<String> lines = csvResult.getLines();
@@ -18644,8 +18643,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countCountryChannelLive(String startdate, String enddate, String channel_name,String filter)
 						    throws CsvExtractorException, Exception
 						  {
-						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-						    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
+						    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+						    String query = "SELECT COUNT(*)as count,city FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by city order by count desc";
 						    CSVResult csvResult = getCsvResult(false, query);
 						    List<String> headers = csvResult.getHeaders();
 						    List<String> lines = csvResult.getLines();
@@ -18717,7 +18716,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 					  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 					  
 				    
-					  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+					  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 						      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 					  
 						 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -18737,8 +18736,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 						  
 						  
 						  
-						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-					    String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where channel_name = '" + 
+						//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+					    String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where channel_name = '" + 
 					      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 					    CSVResult csvResult = getCsvResult(false, query);
 					    List<String> headers = csvResult.getHeaders();
@@ -18765,7 +18764,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  {
 				      List<PublisherReport> pubreport = new ArrayList(); 
 					  
-					  String querya1 = "SELECT COUNT(distinct(cookie_id)) FROM enhanceduserdata where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
+					  String querya1 = "SELECT COUNT(DISTINCT(cookie_id)) FROM enhanceduserdata where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate +"' limit 20000000";   
 					  
 					    //Divide count in different limits 
 					
@@ -18826,7 +18825,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 					      Double index = startlimit +1;
 					      if(countv1 == 1)
 					    	  index=0.0;
-					      String query = "SELECT distinct(cookie_id) FROM enhanceduserdata where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
+					      String query = "SELECT DISTINCT(cookie_id) FROM enhanceduserdata where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "' Order by cookie_id limit "+index.intValue()+","+finallimit.intValue();  	
 						  System.out.println(query);
 					  //    Query.add(query);
 					      current_start += subrange_length;
@@ -19004,7 +19003,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> gettimeofdayChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
+				    String query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1h')";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19030,8 +19029,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countPinCodeChannelLive(String startdate, String enddate, String channel_name)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = "SELECT COUNT(*)as count,postalcode FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by postalcode";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19059,8 +19058,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> countLatLongChannelLive(String startdate, String enddate, String channel_name)
 				    throws CsvExtractorException, Exception
 				  {
-				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				    String query = String.format("SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude", new Object[] { "enhanceduserdatabeta1" });
+				    //Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				    String query = String.format("SELECT COUNT(*)as count,latitude_longitude FROM enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by latitude_longitude", new Object[] { "enhanceduserdatapatrika" });
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19092,7 +19091,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> gettimeofdayQuarterChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
+				    String query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='4h')";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19118,7 +19117,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> gettimeofdayDailyChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*) from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
+				    String query = "Select count(*) from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY date_histogram(field='request_time','interval'='1d')";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19144,7 +19143,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getdayQuarterdataChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),QuarterValue from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
+				    String query = "Select count(*),QuarterValue from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY QuarterValue";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19188,7 +19187,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getGenderChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),gender from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY gender";
+				    String query = "Select count(*),gender from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY gender";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19217,7 +19216,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getAgegroupChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),agegroup from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
+				    String query = "Select count(*),agegroup from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY agegroup";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19243,7 +19242,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getISPChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query = "Select count(*),ISP from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
+				    String query = "Select count(*),ISP from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY ISP";
 				    CSVResult csvResult = getCsvResult(false, query);
 				    List<String> headers = csvResult.getHeaders();
 				    List<String> lines = csvResult.getLines();
@@ -19271,7 +19270,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  public List<PublisherReport> getOrgChannelLive(String startdate, String enddate, String channel_name)
 				    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  {
-				    String query1 = "Select count(*),organisation from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
+				    String query1 = "Select count(*),organisation from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY organisation";
 				    CSVResult csvResult1 = getCsvResult(false, query1);
 				    List<String> headers1 = csvResult1.getHeaders();
 				    List<String> lines1 = csvResult1.getLines();
@@ -19306,7 +19305,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 				  							  
 				  						    
-				  							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				  							  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 				  								      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 				  							  
 				  							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -19327,8 +19326,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  								  
 				  								  
 				  								  
-				  							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				  							  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+				  							//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				  							  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 				  							    //  channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 				  							      CSVResult csvResult = getCsvResult(false, query00);
 				  							      List<String> headers = csvResult.getHeaders();
@@ -19373,7 +19372,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  						  {
 				  							  
 				  							  
-				  					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				  					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 				  						      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 				  					  
 				  					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -19394,8 +19393,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  						  
 				  						  
 				  						  
-				  					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				  					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+				  					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				  					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 				  					    //  channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 				  					      CSVResult csvResult = getCsvResult(false, query00);
 				  					      List<String> headers = csvResult.getHeaders();
@@ -19438,7 +19437,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  				  public List<PublisherReport> countLoyalUsersChannelLiveDatewise(String startdate, String enddate, String channel_name, String filter)
 				  						    throws CsvExtractorException, Exception
 				  						  {
-				  					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				  					  String query00 = "SELECT COUNT(*)as count, cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 				  						      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 				  					  
 				  					//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -19459,8 +19458,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  						  
 				  						  
 				  						  
-				  					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				  					  //  String query = "SELECT count(distinct(cookie_id))as reach,date FROM enhanceduserdatabeta1 where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
+				  					//	//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				  					  //  String query = "SELECT count(DISTINCT(cookie_id))as reach,date FROM enhanceduserdatapatrika where refcurrentoriginal like '%"+sectionname+"%' and channel_name = '" + 
 				  					    //  channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " group by date";
 				  					      CSVResult csvResult = getCsvResult(false, query00);
 				  					      List<String> headers = csvResult.getHeaders();
@@ -19509,7 +19508,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 				  							  
 				  						    
-				  							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				  							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 				  								      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 				  							  
 				  							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -19530,8 +19529,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  								  
 				  								  
 				  								  
-				  								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				  							    String query = "SELECT count(*) as visits FROM enhanceduserdatabeta1 where channel_name = '" + 
+				  								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				  							    String query = "SELECT count(*) as visits FROM enhanceduserdatapatrika where channel_name = '" + 
 				  							      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 				  							      CSVResult csvResult = getCsvResult(false, query);
 				  							      List<String> headers = csvResult.getHeaders();
@@ -19565,7 +19564,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  						//	  System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream("output.txt"))));
 				  							  
 				  						    
-				  							  String query00 = "SELECT cookie_id FROM enhanceduserdatabeta1 where channel_name = '" + 
+				  							  String query00 = "SELECT cookie_id FROM enhanceduserdatapatrika where channel_name = '" + 
 				  								      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" +"group by cookie_id limit 20000000";
 				  							  
 				  							//	 CSVResult csvResult00 = getCsvResult(false, query00);
@@ -19586,8 +19585,8 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  								  
 				  								  
 				  								  
-				  								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatabeta1 group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
-				  							    String query = "SELECT count(distinct(cookie_id))as reach FROM enhanceduserdatabeta1 where channel_name = '" + 
+				  								//Aggregations result = query(String.format("SELECT COUNT(*),brandName,browser_name FROM enhanceduserdatapatrika group by brandName,browser_name", new Object[] { "enhanceduserprofilestore" }));
+				  							    String query = "SELECT count(DISTINCT(cookie_id))as reach FROM enhanceduserdatapatrika where channel_name = '" + 
 				  							      channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'";
 				  							      CSVResult csvResult = getCsvResult(false, query);
 				  							      List<String> headers = csvResult.getHeaders();
@@ -19615,7 +19614,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  				public List<PublisherReport> getTopPostsbyTotalPageviewschannelLive(String startdate, String enddate, String channel_name)
 				  					    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  					  {
-				  					    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				  					    String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				  					    CSVResult csvResult1 = getCsvResult(false, query1);
 				  					    List<String> headers1 = csvResult1.getHeaders();
 				  					    List<String> lines1 = csvResult1.getLines();
@@ -19631,7 +19630,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  					        String[] data1 = ((String)lines1.get(i)).split(",");
 				  					      //    String articleparts[] = data1[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data1[0]);
 				  					         
-				  					        String articleparts[] = data1[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data1[0]); Article article = GetMiddlewareData.getArticleMetaData(data1[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}
+				  					        String articleparts[] = data1[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data1[0]); Article article = GetMiddlewareData.getArticleMetaData(data1[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}
 				  					        obj.setCount(data1[1]);
 				  					          String[] channels = channel_name.split("_");String channel_name1 = channels[0];channel_name1 = capitalizeString(channel_name1);obj.setChannelName(channel_name1);
 				  					          
@@ -19648,7 +19647,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  				public List<PublisherReport> getTopPostsbyUniqueViewschannelLive(String startdate, String enddate, String channel_name)
 				  					    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  					  {
-				  					    String query1 = "Select count(distinct(cookies)),refcurrentoriginal from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				  					    String query1 = "Select count(distinct(cookies)),refcurrentoriginal from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				  					    CSVResult csvResult1 = getCsvResult(false, query1);
 				  					    List<String> headers1 = csvResult1.getHeaders();
 				  					    List<String> lines1 = csvResult1.getLines();
@@ -19664,7 +19663,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  					        String[] data1 = ((String)lines1.get(i)).split(",");
 				  					        //  String articleparts[] = data1[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data1[0]);
 				  					          
-				  					          String articleparts[] = data1[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data1[0]); Article article = GetMiddlewareData.getArticleMetaData(data1[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);List<String> tags1 = article.getTags(); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}
+				  					          String articleparts[] = data1[0].split("/"); String articleTitle = articleparts[articleparts.length-1];articleTitle = articleTitle.replace("-"," ");articleTitle=capitalizeString(articleTitle);obj.setArticleTitle(articleTitle); obj.setPublisher_pages(data1[0]); Article article = GetMiddlewareData.getArticleMetaData(data1[0]);String articleImage = article.getMainimage();obj.setArticleImage(articleImage);String id = article.getId(); obj.setArticleId(id);String authorName = article.getAuthor();obj.setArticleAuthor(authorName);String authorId = article.getAuthorId();obj.setAuthorId(authorId);String tags = article.getTag();List<String> tags1 = Arrays.asList(tags.split("\\s*,\\s*")); obj.setArticleTag(tags1);if(article.getArticletitle() != null && !article.getArticletitle().isEmpty()){ articleTitle = article.getArticletitle();obj.setArticleTitle(articleTitle);}
 				  					          obj.setCount(data1[1]);
 				  					          String[] channels = channel_name.split("_");String channel_name1 = channels[0];channel_name1 = capitalizeString(channel_name1);obj.setChannelName(channel_name1);
 				  					          
@@ -19682,7 +19681,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  				public List<PublisherReport> getRefererPostsChannelLive(String startdate, String enddate, String channel_name)
 				  					    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  					  {
-				  					 String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				  					 String query1 = "Select count(*),refcurrentoriginal from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				  					    CSVResult csvResult1 = getCsvResult(false, query1);
 				  					    List<String> headers1 = csvResult1.getHeaders();
 				  					    List<String> lines1 = csvResult1.getLines();
@@ -19714,14 +19713,14 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  				public List<PublisherReport> getNewContentChannelLive(String startdate, String enddate, String channel_name)
 				  					    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  					  {
-				  					    String query1 = "Select refcurrentoriginal from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				  					    String query1 = "Select refcurrentoriginal from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				  					    CSVResult csvResult1 = getCsvResult(false, query1);
 				  					    List<String> headers1 = csvResult1.getHeaders();
 				  					    List<String> lines1 = csvResult1.getLines();
 				  					    System.out.println(headers1);
 				  					      System.out.println(lines1);
 				  				
-				  					    String query2 = "Select refcurrentoriginal from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time < " + "'" + startdate + "' GROUP BY refcurrentoriginal";
+				  					    String query2 = "Select refcurrentoriginal from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time < " + "'" + startdate + "' GROUP BY refcurrentoriginal";
 				  					    CSVResult csvResult2 = getCsvResult(false, query2);
 				  					    List<String> headers2 = csvResult2.getHeaders();
 				  					    List<String> lines2 = csvResult2.getLines();
@@ -19766,14 +19765,14 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
 				  				public List<PublisherReport> getNewContentCountChannelLive(String startdate, String enddate, String channel_name)
 				  					    throws SQLFeatureNotSupportedException, SqlParseException, CsvExtractorException, Exception
 				  					  {
-				  					    String query1 = "Select refcurrentoriginal from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
+				  					    String query1 = "Select refcurrentoriginal from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time between " + "'" + startdate + "'" + " and " + "'" + enddate + "'" + " GROUP BY refcurrentoriginal";
 				  					    CSVResult csvResult1 = getCsvResult(false, query1);
 				  					    List<String> headers1 = csvResult1.getHeaders();
 				  					    List<String> lines1 = csvResult1.getLines();
 				  					    System.out.println(headers1);
 				  					      System.out.println(lines1);
 				  				
-				  					    String query2 = "Select refcurrentoriginal from enhanceduserdatabeta1 where channel_name = '" + channel_name + "' and request_time < " + "'" + startdate + "' GROUP BY refcurrentoriginal";
+				  					    String query2 = "Select refcurrentoriginal from enhanceduserdatapatrika where channel_name = '" + channel_name + "' and request_time < " + "'" + startdate + "' GROUP BY refcurrentoriginal";
 				  					    CSVResult csvResult2 = getCsvResult(false, query2);
 				  					    List<String> headers2 = csvResult2.getHeaders();
 				  					    List<String> lines2 = csvResult2.getLines();
@@ -19858,7 +19857,7 @@ public List<PublisherReport> getQueryFieldChannelGroupByLive(String queryfield,S
     String port = System.getenv("ES_TEST_PORT");
     if (host == null)
     {
-    host = "172.16.101.132";
+    host = "localhost";
     	//System.out.println("ES_TEST_HOST enviroment variable does not exist. choose default 'localhost'");
     }
     if (port == null)

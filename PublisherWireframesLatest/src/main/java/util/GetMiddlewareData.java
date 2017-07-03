@@ -11,19 +11,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import com.publisherdata.model.Article;
 import com.publisherdata.model.DashboardTemplate;
-import com.publisherdata.model.Dropdown;
 import com.publisherdata.model.DropdownMap;
 import com.publisherdata.model.Section;
 import com.publisherdata.model.Site;
 import com.publisherdata.model.TemplateMap;
-import com.publisherdata.model.TimeSpan;
 import com.publisherdata.model.TimeSpanMap;
 
 public class GetMiddlewareData {
@@ -419,15 +415,14 @@ public class GetMiddlewareData {
 	 				authorId = rs.getString("AuthorId");
 	 			    System.out.println(articleurl);
 	 			    List<String> tags1 = Arrays.asList(tag.split("\\s*,\\s*")); 
-	 	             
-	 			     obj.setId(articleid);
+	 	             obj.setId(articleid);
 	 	             obj.setArticleUrl(articleurl);
 	 	    		 obj.setSiteId(siteid);;
 	 	    	     obj.setArticleName(articlename);
 	 	    		 obj.setAuthor(author);
 	 	    		 obj.setPublishdate(publishdate);
 	 	    		 obj.setMainimage(mainimage);
-	 	    		 obj.setTags(tags1);
+	 	    		 obj.setTag(tag);
 	 	    	     obj.setArticletitle(articletitle);
 	 	    		// article.add(obj);
 	 	    	     obj.setAuthorId(authorId);
@@ -863,19 +858,15 @@ public class GetMiddlewareData {
 	    String cardTitle =null;
 	    String dropdown=null;
 	    List<TemplateMap> tempmap = new ArrayList<TemplateMap>();
-//	    List<TimeSpanMap> timespanmap = new ArrayList<TimeSpanMap>();
+	    List<TimeSpanMap> timespanmap = new ArrayList<TimeSpanMap>();
 	    List<DropdownMap> dropdownmap = new ArrayList<DropdownMap>();
 	    DashboardTemplate template = new DashboardTemplate();
-	    TimeSpanMap timespanmap = new TimeSpanMap();
-	    DropdownMap dropdownMap = new DropdownMap();
-	    String minutes = null;
 	    ResultSet rs = null;
 	    ResultSet rs1 = null;
 	    ResultSet rs2 = null;
 	    Statement st = null;
 	    Statement st1 = null;
 	    Statement st2 = null;
-	    Set<String> set = new HashSet<String>();
 	   try{
 	    
 	    query0 = "Select * from TemplateMap where siteId="+Id;
@@ -908,9 +899,10 @@ public class GetMiddlewareData {
 			    cardTitle = rs.getString("CardTitle");
 	            
 	 
-	            
+	             obj.setSiteId(siteid);
 	    		 obj.setEndpoint(endpoint);
-	    		 obj.setDisplay(cardTitle);
+	    	     obj.setId(id);
+	    		 obj.setCardTitle(cardTitle);
 	    	     tempmap.add(obj);
 	    	
 			}    		 
@@ -925,9 +917,8 @@ public class GetMiddlewareData {
 		 
 		 query1 = "Select * from TimeSpan where SiteId="+Id;
 		    
-		
-		
-		    
+		 
+		 
 		 
 		 
 			try {
@@ -939,10 +930,8 @@ public class GetMiddlewareData {
 		      
 		      // execute the query, and get a java resultset
 		    
-			 Map<String, List<TimeSpan>> timespanmap1 = new HashMap<String,List<TimeSpan>>();
-			 List<TimeSpanMap> tsmap = new ArrayList<TimeSpanMap>();
+		     Site obj1 = new Site();
 		     
-		    
 		     try {
 				rs1 = st1.executeQuery(query1);
 			    
@@ -953,53 +942,22 @@ public class GetMiddlewareData {
 			
 			 try {
 				while(rs1.next()){
-					
+					TimeSpanMap obj = new TimeSpanMap();
 					siteid = rs1.getString("SiteId");
 					id = rs1.getString("Id");
 				    
 				    dashboardtype = rs1.getString("DashBoardType");
 				    timespan = rs1.getString("Timespan");
-				    minutes = rs1.getString("Minutes");
-				 //   set.add(dashboardtype);
-				    TimeSpan obj1 = new TimeSpan();
-						    
-				    obj1.setTimespan(timespan);
-				    obj1.setId(id);
-				    obj1.setMinutes(minutes);
-				    
-				        
-				    if(timespanmap1.containsKey(dashboardtype.trim())==false)  
-				    {
-				    	List<TimeSpan> tspan = new ArrayList<TimeSpan>();
-					    tspan.add(obj1);
-				    	timespanmap1.put(dashboardtype.trim(),tspan);
-				    	
-				    }
-				    else{
-				    	
-				    	List<TimeSpan> tspan1 =  timespanmap1.get(dashboardtype.trim());
-				    	tspan1.add(obj1);
-				    	timespanmap1.put(dashboardtype.trim(),tspan1);
-				    }
-		    		
-		    		
+		            
+		 
+		             obj.setSiteId(siteid);
+		    		 obj.setId(id);
+		    	     obj.setDashboardType(dashboardtype);
+		    		 obj.setTimeSpan(timespan);
+		    		 timespanmap.add(obj);
 		    	
 				}    		 
-		
-				
-				
-				for (Map.Entry<String, List<TimeSpan>> entry : timespanmap1.entrySet())
-				{
-				    
-					TimeSpanMap tmap1 = new TimeSpanMap();
-					tmap1.setDashboardType(entry.getKey());
-					tmap1.setTimeSpan(entry.getValue());
-					tsmap.add(tmap1);
-				}	
-				
 			 
-			   timespanmap.setTimeSpanValues(tsmap);
-			   
 			 }  
 		      catch(Exception e){
 		    	  
@@ -1019,11 +977,9 @@ public class GetMiddlewareData {
 				}
 			      
 			      // execute the query, and get a java resultset
-			   
-				 Map<String, List<Dropdown>> dropdownmap1 = new HashMap<String,List<Dropdown>>();
-				 
-			     List<DropdownMap> dropdowns = new ArrayList<DropdownMap>();
-			   
+			    
+			     Site obj2 = new Site();
+			     
 			     try {
 					rs2 = st2.executeQuery(query2);
 				    
@@ -1034,46 +990,21 @@ public class GetMiddlewareData {
 				
 				 try {
 					while(rs2.next()){
-			    	    Dropdown obj = new Dropdown(); 
+			    	    DropdownMap obj = new DropdownMap(); 
 						id = rs2.getString("Id");
 					    siteid = rs2.getString("siteId");
 					   
 					    dropdown = rs2.getString("Dropdown");
 					    endpoint = rs2.getString("endpoint");
-			            obj.setDropdown(dropdown);
-			            obj.setId(id);
-			           
-			            if(dropdownmap1.containsKey(endpoint)==false)  
-					    {
-					    	List<Dropdown> dropdown1 = new ArrayList<Dropdown>();
-						    dropdown1.add(obj);
-					    	dropdownmap1.put(endpoint,dropdown1);
-					    	
-					    }
-					    else{
-					    	
-					    	List<Dropdown> dropdown2 =  dropdownmap1.get(endpoint);
-					    	dropdown2.add(obj);
-					    	dropdownmap1.put(endpoint,dropdown2);
-					    }
-			    		
 			            
+			            obj.setDropdown(dropdown);
+			    	    obj.setEndpoint(endpoint);
+			    	    obj.setId(id);
+			    	    obj.setSiteId(siteid);
+					    dropdownmap.add(obj);
+					 
 					}    		 
 				 
-					 for (Map.Entry<String, List<Dropdown>> entry : dropdownmap1.entrySet())
-						{
-						    
-							DropdownMap dmap1 = new DropdownMap();
-							dmap1.setEndpoint(entry.getKey());
-							dmap1.setDropdown(entry.getValue());
-							dropdowns.add(dmap1);
-						}	
-			            
-					
-					
-					dropdownMap.setDropdownValues(dropdowns);
-					
-					
 				 }  
 			      catch(Exception e){
 			    	  
@@ -1082,9 +1013,9 @@ public class GetMiddlewareData {
 		 
 		 
 		 
-		     template.setDropdowntemplate(dropdownMap);
-		     template.setCardtitletemplate(tempmap);
-		     template.setTimespantemplate(timespanmap);
+		     template.setDropdownmap(dropdownmap);
+		     template.setTempmap(tempmap);
+		     template.setTimespanmap(timespanmap);
 		 
 	   }
 	   catch(Exception e){

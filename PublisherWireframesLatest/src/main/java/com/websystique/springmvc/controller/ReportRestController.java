@@ -1823,11 +1823,9 @@ public class ReportRestController {
 										if(queryfield.equals("city"))
 										response.setMessage("Location Not available");
 										
-										else if(queryfield.equals("audience_segment"))
+										if(queryfield.equals("audience_segment"))
 										response.setMessage("Segment Not available");
 									
-										else 
-										response.setMessage("Data Not available");
 									
 									
 									}
@@ -1878,11 +1876,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-								     response.setMessage("Data Not available");
+								
+								
 								}
 								
 								return new ResponseEntity<Response>(response,
@@ -1930,11 +1928,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-									response.setMessage("Data Not available");
+								
+								
 								}
 								
 								return new ResponseEntity<Response>(response,
@@ -1982,11 +1980,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-										response.setMessage("Data Not available");
+								
+								
 								}
 								
 								return new ResponseEntity<Response>(response,
@@ -2034,11 +2032,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-										response.setMessage("Data Not available");
+								
+								
 								}
 								return new ResponseEntity<Response>(response,
 										HttpStatus.OK);
@@ -2086,11 +2084,11 @@ public class ReportRestController {
 										if(queryfield.equals("city"))
 										response.setMessage("Location Not available");
 										
-										else if(queryfield.equals("audience_segment"))
+										if(queryfield.equals("audience_segment"))
 										response.setMessage("Segment Not available");
 									
-										else
-										response.setMessage("Data Not available");
+									
+									
 									}
 									return new ResponseEntity<Response>(
 											response, HttpStatus.OK);
@@ -2137,11 +2135,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-									response.setMessage("Data Not available");
+								
+								
 								}
 								return new ResponseEntity<Response>(response,
 										HttpStatus.OK);
@@ -2188,12 +2186,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-									response.setMessage("Data Not available");
-									
+								
+								
 								}
 								return new ResponseEntity<Response>(response,
 										HttpStatus.OK);
@@ -2240,12 +2237,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-									response.setMessage("Data Not available");
-									
+								
+								
 								}
 								return new ResponseEntity<Response>(response,
 										HttpStatus.OK);
@@ -2292,11 +2288,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-										response.setMessage("Data Not available");
+								
+								
 								}
 								return new ResponseEntity<Response>(response,
 										HttpStatus.OK);
@@ -2400,11 +2396,10 @@ public class ReportRestController {
 										if(queryfield.equals("city"))
 										response.setMessage("Location Not available");
 										
-										else if(queryfield.equals("audience_segment"))
+										if(queryfield.equals("audience_segment"))
 										response.setMessage("Segment Not available");
-									  
-										else 
-											response.setMessage("Data Not available");
+									
+									
 									
 									}
 									return new ResponseEntity<Response>(
@@ -2454,11 +2449,9 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-										response.setMessage("Data Not available");
 								
 								
 								}
@@ -2507,11 +2500,10 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else 
-										response.setMessage("Data Not available");
+								
 								
 								}
 								return new ResponseEntity<Response>(response,
@@ -2559,11 +2551,10 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else 
-										response.setMessage("Data Not available");
+								
 								
 								}
 								return new ResponseEntity<Response>(response,
@@ -2611,11 +2602,10 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
-								   
-									else 
-										response.setMessage("Data Not available");
+								
+								
 								
 								}
 								return new ResponseEntity<Response>(response,
@@ -2662,11 +2652,10 @@ public class ReportRestController {
 										if(queryfield.equals("city"))
 										response.setMessage("Location Not available");
 										
-										else if(queryfield.equals("audience_segment"))
+										if(queryfield.equals("audience_segment"))
 										response.setMessage("Segment Not available");
 									
-										else 
-											response.setMessage("Data Not available");
+									
 									
 									}
 									return new ResponseEntity<Response>(
@@ -2712,11 +2701,10 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else 
-										response.setMessage("Data Not available");
+								
 								
 								}
 								return new ResponseEntity<Response>(response,
@@ -2764,12 +2752,11 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-										response.setMessage("Data Not available");
-								 
+								
+								
 								}
 								return new ResponseEntity<Response>(response,
 										HttpStatus.OK);
@@ -2816,11 +2803,9 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else 
-										response.setMessage("Data Not available");
 								
 								
 								}
@@ -2869,11 +2854,10 @@ public class ReportRestController {
 									if(queryfield.equals("city"))
 									response.setMessage("Location Not available");
 									
-									else if(queryfield.equals("audience_segment"))
+									if(queryfield.equals("audience_segment"))
 									response.setMessage("Segment Not available");
 								
-									else
-										response.setMessage("Data Not available");
+								
 								
 								}
 								return new ResponseEntity<Response>(response,

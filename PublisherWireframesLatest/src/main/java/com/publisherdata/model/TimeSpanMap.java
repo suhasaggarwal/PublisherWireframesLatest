@@ -1,36 +1,35 @@
 package com.publisherdata.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-
-@JsonInclude(JsonInclude.Include.NON_NULL.NON_EMPTY)
 public class TimeSpanMap {
-	
-public String dashboardType; 
-public String getDashboardType() {
-	return dashboardType;
-}
-public void setDashboardType(String dashboardType) {
-	this.dashboardType = dashboardType;
-}
-public List<TimeSpanMap> getTimeSpanValues() {
-	return timeSpanValues;
-}
-public void setTimeSpanValues(List<TimeSpanMap> timeSpanValues) {
-	this.timeSpanValues = timeSpanValues;
-}
-public List<TimeSpan> getTimeSpan() {
-	return timeSpan;
-}
-public void setTimeSpan(List<TimeSpan> timeSpan) {
-	this.timeSpan = timeSpan;
-}
-public List<TimeSpanMap> timeSpanValues = new ArrayList<TimeSpanMap>();
-public List<TimeSpan> timeSpan = new ArrayList<TimeSpan>();
 
-
+public String getId() {
+		return Id;
+	}
+	public void setId(String id) {
+		Id = id;
+	}
+	public String getTimeSpan() {
+		return TimeSpan;
+	}
+	public void setTimeSpan(String timeSpan) {
+		TimeSpan = timeSpan;
+	}
+	public String getSiteId() {
+		return SiteId;
+	}
+	public void setSiteId(String siteId) {
+		SiteId = siteId;
+	}
+	public String getDashboardType() {
+		return DashboardType;
+	}
+	public void setDashboardType(String dashboardType) {
+		DashboardType = dashboardType;
+	}
+private String Id;
+private String TimeSpan;
+private String SiteId;
+private String DashboardType;
 
 
 

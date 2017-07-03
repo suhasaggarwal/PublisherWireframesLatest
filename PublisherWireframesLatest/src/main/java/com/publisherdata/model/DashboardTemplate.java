@@ -5,31 +5,27 @@ import java.util.List;
 
 public class DashboardTemplate {
 
-	 
-	
-	
-	List<TemplateMap> cardtitletemplate = new ArrayList<TemplateMap>();
-	
-	public List<TemplateMap> getCardtitletemplate() {
-		return cardtitletemplate;
+	   public List<TemplateMap> getTempmap() {
+		return tempmap;
 	}
-	public void setCardtitletemplate(List<TemplateMap> cardtitletemplate) {
-		this.cardtitletemplate = cardtitletemplate;
+	public void setTempmap(List<TemplateMap> tempmap) {
+		this.tempmap = tempmap;
 	}
-	public TimeSpanMap getTimespantemplate() {
-		return timespantemplate;
+	public List<TimeSpanMap> getTimespanmap() {
+		return timespanmap;
 	}
-	public void setTimespantemplate(TimeSpanMap timespantemplate) {
-		this.timespantemplate = timespantemplate;
+	public void setTimespanmap(List<TimeSpanMap> timespanmap) {
+		this.timespanmap = timespanmap;
 	}
-	public DropdownMap getDropdowntemplate() {
-		return dropdowntemplate;
+	public List<DropdownMap> getDropdownmap() {
+		return dropdownmap;
 	}
-	public void setDropdowntemplate(DropdownMap dropdowntemplate) {
-		this.dropdowntemplate = dropdowntemplate;
+	public void setDropdownmap(List<DropdownMap> dropdownmap) {
+		this.dropdownmap = dropdownmap;
 	}
-	TimeSpanMap timespantemplate = new TimeSpanMap();
-	DropdownMap dropdowntemplate = new DropdownMap();
+	List<TemplateMap> tempmap = new ArrayList<TemplateMap>();
+	    List<TimeSpanMap> timespanmap = new ArrayList<TimeSpanMap>();
+	    List<DropdownMap> dropdownmap = new ArrayList<DropdownMap>();
 	    
 	
 	
