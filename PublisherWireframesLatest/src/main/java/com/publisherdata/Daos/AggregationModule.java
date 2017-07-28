@@ -67,6 +67,7 @@ public class AggregationModule
   private static SearchDao searchDao;
   private static AggregationModule INSTANCE;
   
+
   public static Map<String,String> citycodeMap;
   public static Map<String,String> citycodeMap2;
   public static Map<String,String> countrymap;
